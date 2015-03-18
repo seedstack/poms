@@ -1,0 +1,89 @@
+<!--
+
+    Copyright (c) 2013-2015 by The SeedStack authors. All rights reserved.
+
+    This file is part of SeedStack, An enterprise-oriented full development stack.
+
+    This Source Code Form is subject to the terms of the Mozilla Public
+    License, v. 2.0. If a copy of the MPL was not distributed with this
+    file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <parent>
+		<groupId>org.seedstack</groupId>
+		<artifactId>parent</artifactId>
+		<version>2.0.0-M1-SNAPSHOT</version>
+    </parent>
+
+	<artifactId>guiceext-bom</artifactId>
+	<packaging>pom</packaging>
+
+	<properties>
+        <guice.version>3.1.3</guice.version>
+        <mycila-guice.version>2.10.ga</mycila-guice.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-assistedinject</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-persist</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-jmx</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-grapher</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-spring</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-jndi</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-servlet</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-multibindings</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-throwingproviders</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.sonatype.sisu.inject</groupId>
+				<artifactId>guice-struts2</artifactId>
+				<version>${guice.version}</version>
+			</dependency>
+            <dependency>
+                <groupId>com.mycila</groupId>
+                <artifactId>mycila-guice</artifactId>
+                <version>${mycila-guice.version}</version>
+            </dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+</project>

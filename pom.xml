@@ -1,0 +1,257 @@
+<!--
+
+    Copyright (c) 2013-2015 by The SeedStack authors. All rights reserved.
+
+    This file is part of SeedStack, An enterprise-oriented full development stack.
+
+    This Source Code Form is subject to the terms of the Mozilla Public
+    License, v. 2.0. If a copy of the MPL was not distributed with this
+    file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
+    <groupId>org.seedstack</groupId>
+    <artifactId>parent</artifactId>
+    <version>2.0.0-M1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>license-templates</module>
+        <module>assembly-descriptors</module>
+        <module>commons-bom</module>
+        <module>guiceext-bom</module>
+        <module>hibernate-bom</module>
+        <module>jackson-bom</module>
+        <module>java-bom</module>
+        <module>jersey-bom</module>
+        <module>spring-bom</module>
+        <module>logging-bom</module>
+        <module>nuun-bom</module>
+        <module>metro-bom</module>
+        <module>unittest-bom</module>
+        <module>integrationtest-bom</module>
+        <module>shiro-bom</module>
+        <module>java-parent</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
+        <license-maven-plugin.version>2.6</license-maven-plugin.version>
+
+        <seedstack-poms.version>2.0.0-M1-SNAPSHOT</seedstack-poms.version>
+
+        <seed.license.name>MPL 2.0</seed.license.name>
+        <seed.license.url>https://www.mozilla.org/MPL/2.0/</seed.license.url>
+        <seed.name>SeedStack</seed.name>
+        <seed.years>2013-2015</seed.years>
+        <seed.description>An enterprise-oriented full development stack</seed.description>
+        <seed.url>http://github.com/seedstack</seed.url>
+        <seed.owner>The ${seed.name} authors</seed.owner>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>${license-maven-plugin.version}</version>
+                    <configuration>
+                        <header>org/seedstack/licenses/${seed.license.name}.license</header>
+                        <strictCheck>true</strictCheck>
+                        <keywords>
+                            <keyword>Copyright</keyword>
+                        </keywords>
+                        <properties>
+                            <owner>${seed.owner}</owner>
+                            <years>${seed.years}</years>
+                            <description>${seed.description}</description>
+                        </properties>
+                        <mapping>
+                            <handlers>SCRIPT_STYLE</handlers>
+                            <schemas>SCRIPT_STYLE</schemas>
+                            <props>SCRIPT_STYLE</props>
+                            <wsdl>XML_STYLE</wsdl>
+                        </mapping>
+                        <useDefaultExcludes>true</useDefaultExcludes>
+                        <excludes>
+                            <exclude>AUTHORS</exclude>
+                            <exclude>CONTRIBUTORS</exclude>
+                            <exclude>LICENSE</exclude>
+                            <exclude>**/mime.types</exclude>
+                            <exclude>**/*.csv</exclude>
+                            <exclude>**/*.puml</exclude>
+                            <exclude>**/*.uxf</exclude>
+                            <exclude>**/*.svg</exclude>
+                            <exclude>yworks-uml-doclet/**</exclude>
+                            <exclude>**/bower_components/**</exclude>
+                        </excludes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>check-license-header</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.seedstack</groupId>
+                            <artifactId>license-templates</artifactId>
+                            <version>${seedstack-poms.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>1.8</version>
+                    <configuration>
+                        <failIfWarning>true</failIfWarning>
+                        <includedLicenses>
+                            <includedLicense>Apache 2.0</includedLicense>
+                            <includedLicense>BSD</includedLicense>
+                            <includedLicense>CDDL 1.1</includedLicense>
+                            <includedLicense>CDDL 1.0</includedLicense>
+                            <includedLicense>EPL 1.0</includedLicense>
+                            <includedLicense>GPL2 w/ CPE</includedLicense>
+                            <includedLicense>LGPL 2.1</includedLicense>
+                            <includedLicense>LGPL 3.0</includedLicense>
+                            <includedLicense>MIT</includedLicense>
+                            <includedLicense>MPL 1.1</includedLicense>
+                            <includedLicense>MPL 2.0</includedLicense>
+                            <includedLicense>Public Domain</includedLicense>
+                            <includedLicense>WTFPL</includedLicense>
+                            <includedLicense>JSON</includedLicense>
+                            <includedLicense>ICU License</includedLicense>
+                        </includedLicenses>
+                        <includedScopes>compile</includedScopes>
+                        <useMissingFile>true</useMissingFile>
+                        <useRepositoryMissingFiles>false</useRepositoryMissingFiles>
+                        <deployMissingFile>false</deployMissingFile>
+                        <licenseMerges>
+                            <licenseMerge>Apache 2.0|The Apache Software License, Version 2.0</licenseMerge>
+                            <licenseMerge>Apache 2.0|Apache License, Version 2.0</licenseMerge>
+                            <licenseMerge>Apache 2.0|Apache License, version 2.0</licenseMerge>
+                            <licenseMerge>Apache 2.0|Apache 2</licenseMerge>
+                            <licenseMerge>Apache 2.0|Apache License 2.0</licenseMerge>
+                            <licenseMerge>Apache 2.0|Apache License</licenseMerge>
+                            <licenseMerge>Apache 2.0|Apache 2.0 License</licenseMerge>
+                            <licenseMerge>Apache 2.0|AL 2.0</licenseMerge>
+                            <licenseMerge>MPL 1.1|Mozilla Public License</licenseMerge>
+                            <licenseMerge>MPL 2.0|MPL 2.0, and EPL 1.0</licenseMerge>
+                            <licenseMerge>MIT</licenseMerge>
+                            <licenseMerge>MIT|MIT License|MIT license</licenseMerge>
+                            <licenseMerge>MIT|The MIT License</licenseMerge>
+                            <licenseMerge>MIT|Bouncy Castle License</licenseMerge>
+                            <licenseMerge>BSD|The New BSD License</licenseMerge>
+                            <licenseMerge>BSD|New BSD License</licenseMerge>
+                            <licenseMerge>BSD|BSD License</licenseMerge>
+                            <licenseMerge>BSD|BSD 3-Clause</licenseMerge>
+                            <licenseMerge>BSD|The BSD License</licenseMerge>
+                            <licenseMerge>EPL 1.0|Eclipse Public License 1.0</licenseMerge>
+                            <licenseMerge>EPL 1.0|Eclipse Public License v1.0</licenseMerge>
+                            <licenseMerge>EPL 1.0|Eclipse Public License - v 1.0</licenseMerge>
+                            <licenseMerge>EPL 1.0|Eclipse Public License, Version 1.0</licenseMerge>
+                            <licenseMerge>GPL2 w/ CPE|GNU General Public License, Version 2 with the Classpath Exception</licenseMerge>
+                            <licenseMerge>LGPL 2.1|GNU Lesser General Public License, version 2.1</licenseMerge>
+                            <licenseMerge>LGPL 2.1|GNU Lesser General Public License, Version 2.1</licenseMerge>
+                            <licenseMerge>LGPL 2.1|GNU Lesser General Public License version 2.1 (LGPLv2.1)</licenseMerge>
+                            <!-- For the GPL and UnboundID, below the plugin thinks all licenses must apply so we workaround by assimilating them to the LGPL -->
+                            <licenseMerge>LGPL 2.1|GNU General Public License version 2 (GPLv2)</licenseMerge>
+                            <licenseMerge>LGPL 2.1|UnboundID LDAP SDK Free Use License</licenseMerge>
+                            <licenseMerge>LGPL 2.1|GNU Lesser General Public License</licenseMerge>
+                            <licenseMerge>LGPL 3.0|GNU Lesser General Public Licence</licenseMerge>
+                            <licenseMerge>LGPL 3.0|GNU LESSER GENERAL PUBLIC LICENSE</licenseMerge>
+                            <includedLicense>CDDL 1.1|CDDL+GPL License</includedLicense>
+                            <includedLicense>CDDL 1.0|COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</includedLicense>
+                            <includedLicense>CDDL 1.0|Common Development and Distribution License</includedLicense>
+                            <includedLicense>JSON|The JSON License</includedLicense>
+                        </licenseMerges>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>check-license-compliance</id>
+                            <goals>
+                                <goal>add-third-party</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <repositories>
+        <repository>
+           <id>repository.jboss.org-public</id>
+           <name>JBoss repository</name>
+           <url>https://repository.jboss.org/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <inceptionYear>${seed.years}</inceptionYear>
+    <description>${seed.description}</description>
+    <url>${seed.url}</url>
+
+    <licenses>
+        <license>
+            <name>${seed.license.name}</name>
+            <url>${seed.license.url}</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Adrien LAUER</name>
+            <email>adrien.lauer@mpsa.com</email>
+            <organization>PSA Peugeot Citroën</organization>
+            <organizationUrl>http://www.psa-peugeot-citroen.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Épo JEMBA</name>
+            <email>epo@jemba.net</email>
+            <organization>Kametic</organization>
+            <organizationUrl>https://github.com/kametic</organizationUrl>
+        </developer>
+        <developer>
+            <name>Kavi RAMYEAD</name>
+            <email>kavi.ramyead@ext.mpsa.com</email>
+            <organization>Infotel</organization>
+            <organizationUrl>http://www.infotel.com/</organizationUrl>
+        </developer>
+        <developer>
+            <name>Pierre THIROUIN</name>
+            <email>pierre.thirouin@ext.mpsa.com</email>
+            <organization>Infotel</organization>
+            <organizationUrl>http://www.infotel.com/</organizationUrl>
+        </developer>
+        <developer>
+            <name>Yves DAUTREMAY</name>
+            <email>yves.dautremay@mpsa.com</email>
+            <organization>PSA Peugeot Citroën</organization>
+            <organizationUrl>http://www.psa-peugeot-citroen.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/seedstack/poms</url>
+        <connection>scm:git:git://github.com/seedstack/poms.git</connection>
+        <developerConnection>scm:git:git@github.com:seedstack/poms.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+</project>
