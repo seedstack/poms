@@ -23,7 +23,7 @@
 
     <properties>
         <maven-failsafe-plugin.version>2.13</maven-failsafe-plugin.version>
-        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>2.10.2</maven-javadoc-plugin.version>
         <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
