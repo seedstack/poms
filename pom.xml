@@ -97,6 +97,7 @@
                             <exclude>**/*.svg</exclude>
                             <exclude>yworks-uml-doclet/**</exclude>
                             <exclude>**/bower_components/**</exclude>
+                            <exclude>**/node_modules/**</exclude>
                         </excludes>
                     </configuration>
                     <executions>
