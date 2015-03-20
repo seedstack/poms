@@ -122,6 +122,7 @@
                     <configuration>
                         <failIfWarning>true</failIfWarning>
                         <includedLicenses>
+                            <includedLicense>AGPL 3.0</includedLicense>
                             <includedLicense>Apache 2.0</includedLicense>
                             <includedLicense>BSD</includedLicense>
                             <includedLicense>CDDL 1.1</includedLicense>
@@ -143,6 +144,7 @@
                         <useRepositoryMissingFiles>false</useRepositoryMissingFiles>
                         <deployMissingFile>false</deployMissingFile>
                         <licenseMerges>
+                            <licenseMerge>AGPL 3.0|GNU Affero General Public License v3</licenseMerge>
                             <licenseMerge>Apache 2.0|The Apache Software License, Version 2.0</licenseMerge>
                             <licenseMerge>Apache 2.0|Apache License, Version 2.0</licenseMerge>
                             <licenseMerge>Apache 2.0|Apache License, version 2.0</licenseMerge>
@@ -170,7 +172,8 @@
                             <licenseMerge>LGPL 2.1|GNU Lesser General Public License, version 2.1</licenseMerge>
                             <licenseMerge>LGPL 2.1|GNU Lesser General Public License, Version 2.1</licenseMerge>
                             <licenseMerge>LGPL 2.1|GNU Lesser General Public License version 2.1 (LGPLv2.1)</licenseMerge>
-                            <!-- For the GPL and UnboundID, below the plugin thinks all licenses must apply so we workaround by assimilating them to the LGPL -->
+                            <!-- All GPL occurrences are part of multi licensed (manually checked). The plugin thinks all licenses must apply so we workaround by assimilating them to the LGPL -->
+                            <licenseMerge>LGPL 2.1|GNU General Public Library</licenseMerge>
                             <licenseMerge>LGPL 2.1|GNU General Public License version 2 (GPLv2)</licenseMerge>
                             <licenseMerge>LGPL 2.1|UnboundID LDAP SDK Free Use License</licenseMerge>
                             <licenseMerge>LGPL 2.1|GNU Lesser General Public License</licenseMerge>
