@@ -47,18 +47,23 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
-        <license-maven-plugin.version>2.6</license-maven-plugin.version>
+        <assertj.version>1.7.1</assertj.version>
+        <junit.version>4.12</junit.version>
+        <hamcrest.version>1.3</hamcrest.version>
+        <jsonassert.version>1.2.3</jsonassert.version>
+
+        <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
+        <license-maven-plugin.version>2.10</license-maven-plugin.version>
 
         <seedstack-poms.version>2.0.0-M1-SNAPSHOT</seedstack-poms.version>
 
-        <seed.license.name>MPL 2.0</seed.license.name>
-        <seed.license.url>https://www.mozilla.org/MPL/2.0/</seed.license.url>
-        <seed.name>SeedStack</seed.name>
-        <seed.years>2013-2015</seed.years>
-        <seed.description>An enterprise-oriented full development stack</seed.description>
-        <seed.url>http://github.com/seedstack</seed.url>
-        <seed.owner>The ${seed.name} authors</seed.owner>
+        <seedstack.license.name>MPL 2.0</seedstack.license.name>
+        <seedstack.license.url>https://www.mozilla.org/MPL/2.0/</seedstack.license.url>
+        <seedstack.name>SeedStack</seedstack.name>
+        <seedstack.years>2013-2015</seedstack.years>
+        <seedstack.description>An enterprise-oriented full development stack</seedstack.description>
+        <seedstack.url>http://github.com/seedstack</seedstack.url>
+        <seedstack.owner>The ${seedstack.name} authors</seedstack.owner>
     </properties>
 
     <build>
@@ -69,15 +74,15 @@
                     <artifactId>license-maven-plugin</artifactId>
                     <version>${license-maven-plugin.version}</version>
                     <configuration>
-                        <header>org/seedstack/licenses/${seed.license.name}.license</header>
+                        <header>org/seedstack/licenses/${seedstack.license.name}.license</header>
                         <strictCheck>true</strictCheck>
                         <keywords>
                             <keyword>Copyright</keyword>
                         </keywords>
                         <properties>
-                            <owner>${seed.owner}</owner>
-                            <years>${seed.years}</years>
-                            <description>${seed.description}</description>
+                            <owner>${seedstack.owner}</owner>
+                            <years>${seedstack.years}</years>
+                            <description>${seedstack.description}</description>
                         </properties>
                         <mapping>
                             <handlers>SCRIPT_STYLE</handlers>
@@ -195,50 +200,52 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.1</version>
+                    <configuration>
+                        <pushChanges>false</pushChanges>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.5</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>sonatype-nexus-staging</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
 
     <repositories>
         <repository>
-           <id>repository.jboss.org-public</id>
-           <name>JBoss repository</name>
-           <url>https://repository.jboss.org/nexus/content/groups/public</url>
+            <id>repository.jboss.org-public</id>
+            <name>JBoss repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public</url>
         </repository>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>  
     </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-nexus-snapshots</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
-    
-    <inceptionYear>${seed.years}</inceptionYear>
-    <description>${seed.description}</description>
-    <url>${seed.url}</url>
+
+    <inceptionYear>${seedstack.years}</inceptionYear>
+    <description>${seedstack.description}</description>
+    <url>${seedstack.url}</url>
 
     <licenses>
         <license>
-            <name>${seed.license.name}</name>
-            <url>${seed.license.url}</url>
+            <name>${seedstack.license.name}</name>
+            <url>${seedstack.license.url}</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -249,30 +256,42 @@
             <email>adrien.lauer@mpsa.com</email>
             <organization>PSA Peugeot Citroën</organization>
             <organizationUrl>http://www.psa-peugeot-citroen.com</organizationUrl>
+            <timezone>Europe/Paris</timezone>
         </developer>
         <developer>
             <name>Épo JEMBA</name>
             <email>epo@jemba.net</email>
             <organization>Kametic</organization>
             <organizationUrl>https://github.com/kametic</organizationUrl>
+            <timezone>Europe/Paris</timezone>
         </developer>
         <developer>
             <name>Kavi RAMYEAD</name>
             <email>kavi.ramyead@ext.mpsa.com</email>
             <organization>Infotel</organization>
             <organizationUrl>http://www.infotel.com/</organizationUrl>
+            <timezone>Europe/Paris</timezone>
         </developer>
         <developer>
             <name>Pierre THIROUIN</name>
             <email>pierre.thirouin@ext.mpsa.com</email>
             <organization>Infotel</organization>
             <organizationUrl>http://www.infotel.com/</organizationUrl>
+            <timezone>Europe/Paris</timezone>
+        </developer>
+        <developer>
+            <name>Redouane LOULOU</name>
+            <email>redouane.loulou@ext.mpsa.com</email>
+            <organization>Infotel</organization>
+            <organizationUrl>http://www.infotel.com/</organizationUrl>
+            <timezone>Europe/Paris</timezone>
         </developer>
         <developer>
             <name>Yves DAUTREMAY</name>
             <email>yves.dautremay@mpsa.com</email>
             <organization>PSA Peugeot Citroën</organization>
             <organizationUrl>http://www.psa-peugeot-citroen.com</organizationUrl>
+            <timezone>Europe/Paris</timezone>
         </developer>
     </developers>
 
