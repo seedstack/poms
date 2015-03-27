@@ -204,6 +204,7 @@
                     <configuration>
                         <pushChanges>true</pushChanges>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <scmCommentPrefix>[ci skip][release]:</scmCommentPrefix>
                     </configuration>
                 </plugin>
                 <plugin>
