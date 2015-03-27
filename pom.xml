@@ -47,6 +47,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <pushChanges>true</pushChanges>
+
         <mycila.license-maven-plugin.version>2.10</mycila.license-maven-plugin.version>
         <codehaus.license-maven-plugin.version>1.8</codehaus.license-maven-plugin.version>
         <maven-release-plugin.version>2.5.1</maven-release-plugin.version>
@@ -202,7 +204,7 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <version>${maven-release-plugin.version}</version>
                     <configuration>
-                        <pushChanges>true</pushChanges>
+                        <pushChanges>${pushChanges}</pushChanges>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <scmCommentPrefix>[ci skip][release]:</scmCommentPrefix>
                     </configuration>
