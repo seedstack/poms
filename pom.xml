@@ -47,28 +47,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <java.source.version>1.6</java.source.version>
-        <java.target.version>1.6</java.target.version>
-
-        <assertj.version>1.7.1</assertj.version>
-        <junit.version>4.12</junit.version>
-        <hamcrest.version>1.3</hamcrest.version>
-        <jsonassert.version>1.2.3</jsonassert.version>
-
-        <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
-        <license-maven-plugin.version>2.10</license-maven-plugin.version>
-        <build-helper-maven-plugin.version>1.9.1</build-helper-maven-plugin.version>
-        <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
-        <maven-failsafe-plugin.version>2.13</maven-failsafe-plugin.version>
-        <maven-javadoc-plugin.version>2.10.2</maven-javadoc-plugin.version>
-        <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
-        <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
-        <maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
-        <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
-        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+        <mycila.license-maven-plugin.version>2.10</mycila.license-maven-plugin.version>
+        <codehaus.license-maven-plugin.version>1.8</codehaus.license-maven-plugin.version>
+        <maven-release-plugin.version>2.5.1</maven-release-plugin.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.5</nexus-staging-maven-plugin.version>
 
         <seedstack.poms.version>2.0.0-M1-SNAPSHOT</seedstack.poms.version>
-
         <seedstack.license.name>MPL 2.0</seedstack.license.name>
         <seedstack.license.url>https://www.mozilla.org/MPL/2.0/</seedstack.license.url>
         <seedstack.name>SeedStack</seedstack.name>
@@ -84,7 +69,7 @@
                 <plugin>
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>${license-maven-plugin.version}</version>
+                    <version>${mycila.license-maven-plugin.version}</version>
                     <configuration>
                         <header>org/seedstack/licenses/${seedstack.license.name}.license</header>
                         <strictCheck>true</strictCheck>
@@ -136,7 +121,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>1.8</version>
+                    <version>${codehaus.license-maven-plugin.version}</version>
                     <configuration>
                         <failIfWarning>true</failIfWarning>
                         <includedLicenses>
@@ -215,7 +200,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.1</version>
+                    <version>${maven-release-plugin.version}</version>
                     <configuration>
                         <pushChanges>true</pushChanges>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
@@ -224,12 +209,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.6</version>
+                    <version>${maven-gpg-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.5</version>
+                    <version>${nexus-staging-maven-plugin.version}</version>
                     <extensions>true</extensions>
                     <configuration>
                         <serverId>sonatype-nexus-staging</serverId>
