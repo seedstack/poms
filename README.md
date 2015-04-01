@@ -1,4 +1,4 @@
-# SEED poms [![Build status](https://travis-ci.org/seedstack/poms.svg?branch=master)](https://travis-ci.org/seedstack/poms)
+# SEED poms [![Build status](https://travis-ci.org/seedstack/poms.svg?branch=master)](https://travis-ci.org/seedstack/poms) [![Stories in Ready](https://badge.waffle.io/seedstack/poms.png?label=ready&title=Ready)](https://waffle.io/seedstack/poms)
 
 Common poms for SEED stack.
 
