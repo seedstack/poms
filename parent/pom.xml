@@ -9,7 +9,8 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.seedstack</groupId>
@@ -86,10 +87,11 @@
                             <phase>prepare-package</phase>
                             <configuration>
                                 <target>
-                                    <concat destfile="${project.build.directory}/site/apidocs/stylesheet.css" append="true">
-                                        <javaresource name="javadoc7-fix.css" />
+                                    <concat destfile="${project.build.directory}/site/apidocs/stylesheet.css"
+                                            append="true">
+                                        <javaresource name="javadoc7-fix.css"/>
                                         <filterchain>
-                                            <stripjavacomments />
+                                            <stripjavacomments/>
                                         </filterchain>
                                     </concat>
                                 </target>
@@ -210,8 +212,7 @@
                 <version>${coveralls-maven-plugin.version}</version>
                 <configuration>
                     <relativeReportDirs>
-                        <relativeReportDir>jacoco</relativeReportDir>
-                        <relativeReportDir>jacoco-it</relativeReportDir>
+                        <relativeReportDir>jacoco-all</relativeReportDir>
                     </relativeReportDirs>
                 </configuration>
             </plugin>
@@ -231,6 +232,36 @@
                         <goals>
                             <goal>prepare-agent-integration</goal>
                         </goals>
+                    </execution>
+                    <execution>
+                        <id>merge-ut-and-it</id>
+                        <goals>
+                            <goal>merge</goal>
+                        </goals>
+                        <phase>post-integration-test</phase>
+                        <configuration>
+                            <fileSets>
+                                <fileSet>
+                                    <directory>${project.build.directory}</directory>
+                                    <includes>
+                                        <include>jacoco.exec</include>
+                                        <include>jacoco-it.exec</include>
+                                    </includes>
+                                </fileSet>
+                            </fileSets>
+                            <destFile>${project.build.directory}/jacoco-all.exec</destFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>post-integration-test</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <dataFile>${project.build.directory}/jacoco-all.exec</dataFile>
+                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-all</outputDirectory>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
