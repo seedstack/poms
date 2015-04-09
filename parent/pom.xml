@@ -30,6 +30,8 @@
         <maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
         <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+        <coveralls-maven-plugin.version>3.1.0</coveralls-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.7.2.201409121644</jacoco-maven-plugin.version>
 
         <java.source.version>1.6</java.source.version>
         <java.target.version>1.6</java.target.version>
@@ -201,6 +203,36 @@
                         <seed.ws.port>${seed.ws.port}</seed.ws.port>
                     </systemProperties>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>${coveralls-maven-plugin.version}</version>
+                <configuration>
+                    <relativeReportDirs>
+                        <relativeReportDir>jacoco</relativeReportDir>
+                        <relativeReportDir>jacoco-it</relativeReportDir>
+                    </relativeReportDirs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-prepare-agent-it</id>
+                        <goals>
+                            <goal>prepare-agent-integration</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
