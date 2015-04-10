@@ -157,6 +157,18 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                    <configuration>
+                        <dataFile>${project.build.directory}/jacoco-all.exec</dataFile>
+                        <outputDirectory>${project.reporting.outputDirectory}/jacoco-all</outputDirectory>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -250,17 +262,6 @@
                                 </fileSet>
                             </fileSets>
                             <destFile>${project.build.directory}/jacoco-all.exec</destFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>post-integration-test</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <configuration>
-                            <dataFile>${project.build.directory}/jacoco-all.exec</dataFile>
-                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-all</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
