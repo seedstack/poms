@@ -360,6 +360,7 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
+                            <excludePackageNames>*.internal.*</excludePackageNames>
                             <!-- Never skip the javadoc attachment as secondary artifact -->
                             <skip>false</skip>
                         </configuration>
