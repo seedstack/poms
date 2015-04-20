@@ -224,8 +224,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
