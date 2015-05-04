@@ -101,6 +101,8 @@
                             <exclude>yworks-uml-doclet/**</exclude>
                             <exclude>**/bower_components/**</exclude>
                             <exclude>**/node_modules/**</exclude>
+                            <exclude>**/*.html</exclude>
+                            <exclude>**/src/license/THIRD-PARTY.properties</exclude>
                         </excludes>
                     </configuration>
                     <executions>
@@ -126,7 +128,6 @@
                     <configuration>
                         <failIfWarning>true</failIfWarning>
                         <includedLicenses>
-                            <includedLicense>AGPL 3.0</includedLicense>
                             <includedLicense>Apache 2.0</includedLicense>
                             <includedLicense>BSD</includedLicense>
                             <includedLicense>CDDL 1.1</includedLicense>
@@ -142,13 +143,13 @@
                             <includedLicense>WTFPL</includedLicense>
                             <includedLicense>JSON</includedLicense>
                             <includedLicense>ICU License</includedLicense>
+                            <includedLicense>Indiana</includedLicense>
                         </includedLicenses>
                         <includedScopes>compile</includedScopes>
                         <useMissingFile>true</useMissingFile>
                         <useRepositoryMissingFiles>false</useRepositoryMissingFiles>
                         <deployMissingFile>false</deployMissingFile>
                         <licenseMerges>
-                            <licenseMerge>AGPL 3.0|GNU Affero General Public License v3</licenseMerge>
                             <licenseMerge>Apache 2.0|The Apache Software License, Version 2.0</licenseMerge>
                             <licenseMerge>Apache 2.0|Apache License, Version 2.0</licenseMerge>
                             <licenseMerge>Apache 2.0|Apache License, version 2.0</licenseMerge>
@@ -168,6 +169,7 @@
                             <licenseMerge>BSD|BSD License</licenseMerge>
                             <licenseMerge>BSD|BSD 3-Clause</licenseMerge>
                             <licenseMerge>BSD|The BSD License</licenseMerge>
+                            <licenseMerge>BSD|BSD style</licenseMerge>
                             <licenseMerge>EPL 1.0|Eclipse Public License 1.0</licenseMerge>
                             <licenseMerge>EPL 1.0|Eclipse Public License v1.0</licenseMerge>
                             <licenseMerge>EPL 1.0|Eclipse Public License - v 1.0</licenseMerge>
@@ -183,10 +185,12 @@
                             <licenseMerge>LGPL 2.1|GNU Lesser General Public License</licenseMerge>
                             <licenseMerge>LGPL 3.0|GNU Lesser General Public Licence</licenseMerge>
                             <licenseMerge>LGPL 3.0|GNU LESSER GENERAL PUBLIC LICENSE</licenseMerge>
-                            <includedLicense>CDDL 1.1|CDDL+GPL License</includedLicense>
-                            <includedLicense>CDDL 1.0|COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</includedLicense>
-                            <includedLicense>CDDL 1.0|Common Development and Distribution License</includedLicense>
-                            <includedLicense>JSON|The JSON License</includedLicense>
+                            <licenseMerge>CDDL 1.1|CDDL+GPL License</licenseMerge>
+                            <licenseMerge>CDDL 1.0|COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</licenseMerge>
+                            <licenseMerge>CDDL 1.0|Common Development and Distribution License</licenseMerge>
+                            <licenseMerge>CDDL 1.0|CDDL + GPLv2 with classpath exception</licenseMerge>
+                            <licenseMerge>JSON|The JSON License</licenseMerge>
+                            <licenseMerge>Indiana|Indiana University Extreme! Lab Software License, vesion 1.1.1</licenseMerge>
                         </licenseMerges>
                     </configuration>
                     <executions>
