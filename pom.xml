@@ -94,15 +94,19 @@
                             <exclude>AUTHORS</exclude>
                             <exclude>CONTRIBUTORS</exclude>
                             <exclude>LICENSE</exclude>
+                            <exclude>Procfile</exclude>
                             <exclude>**/mime.types</exclude>
                             <exclude>**/*.csv</exclude>
                             <exclude>**/*.puml</exclude>
                             <exclude>**/*.uxf</exclude>
                             <exclude>**/*.svg</exclude>
                             <exclude>yworks-uml-doclet/**</exclude>
+                            <exclude>**/.jshintrc</exclude>
+                            <exclude>**/bower_components/**</exclude>
                             <exclude>**/bower_components/**</exclude>
                             <exclude>**/node_modules/**</exclude>
-                            <exclude>**/*.html</exclude>
+                            <exclude>**/templates/**/*.html</exclude>
+                            <exclude>**/views/**/*.html</exclude>
                             <exclude>**/src/license/THIRD-PARTY.properties</exclude>
                         </excludes>
                     </configuration>
