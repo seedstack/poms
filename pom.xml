@@ -46,7 +46,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <!-- Release properties -->
         <pushChanges>true</pushChanges>
+        <arguments>-Pjavadoc</arguments>
 
         <mycila.license-maven-plugin.version>2.10</mycila.license-maven-plugin.version>
         <codehaus.license-maven-plugin.version>1.8</codehaus.license-maven-plugin.version>
@@ -157,6 +159,7 @@
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <scmCommentPrefix>[ci skip][release]:</scmCommentPrefix>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
+                        <releaseProfiles></releaseProfiles>
                     </configuration>
                 </plugin>
                 <plugin>
