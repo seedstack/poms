@@ -1,4 +1,6 @@
-# SEED poms [![Build status](https://travis-ci.org/seedstack/poms.svg?branch=master)](https://travis-ci.org/seedstack/poms) [![Stories in Ready](https://badge.waffle.io/seedstack/poms.png?label=ready&title=Ready)](https://waffle.io/seedstack/poms)
+# SEED poms 
+
+[![Build status](https://travis-ci.org/seedstack/poms.svg?branch=master)](https://travis-ci.org/seedstack/poms) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.seedstack/poms/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/org.seedstack/poms)
 
 Common poms for SEED stack.
 
