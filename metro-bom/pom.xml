@@ -21,7 +21,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<metro.version>2.3</metro.version>
+		<metro.version>2.3.1</metro.version>
 	</properties>
 
 	<dependencyManagement>
