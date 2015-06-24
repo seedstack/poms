@@ -21,7 +21,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <nuun-kernel.version>1.0.M4</nuun-kernel.version>
+        <nuun-kernel.version>1.0.M5</nuun-kernel.version>
     </properties>
 
     <dependencyManagement>
@@ -40,21 +40,6 @@
                 <groupId>io.nuun</groupId>
                 <artifactId>nuun-cli-plugin</artifactId>
                 <version>1.0.M1</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>io.nuun</groupId>
-                        <artifactId>kernel-core</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>io.nuun</groupId>
-                        <artifactId>kernel-specs</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>io.nuun</groupId>
-                <artifactId>nuun-web-plugin</artifactId>
-                <version>1.0.M2</version>
                 <exclusions>
                     <exclusion>
                         <groupId>io.nuun</groupId>
