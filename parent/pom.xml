@@ -9,7 +9,8 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.seedstack</groupId>
@@ -33,9 +34,13 @@
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
         <coveralls-maven-plugin.version>3.1.0</coveralls-maven-plugin.version>
         <jacoco-maven-plugin.version>0.7.4.201502262128</jacoco-maven-plugin.version>
+        <japicmp-maven-plugin.version>0.5.2</japicmp-maven-plugin.version>
 
         <java.source.version>1.6</java.source.version>
         <java.target.version>1.6</java.target.version>
+
+        <compatibility-check.skip>true</compatibility-check.skip>
+        <compatibility-check.reference>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility-check.reference>
     </properties>
 
     <build>
@@ -129,6 +134,48 @@
                         <phase>process-classes</phase>
                         <goals>
                             <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.siom79.japicmp</groupId>
+                <artifactId>japicmp-maven-plugin</artifactId>
+                <version>${japicmp-maven-plugin.version}</version>
+                <configuration>
+                    <oldVersion>
+                        <dependency>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <version>${compatibility-check.reference}</version>
+                        </dependency>
+                    </oldVersion>
+                    <newVersion>
+                        <file>
+                            <path>${project.build.directory}/${project.build.finalName}.jar</path>
+                        </file>
+                    </newVersion>
+                    <parameter>
+                        <excludes>
+                            <exclude>*.internal.*</exclude>
+                        </excludes>
+                        <onlyModified>true</onlyModified>
+                        <onlyBinaryIncompatible>true</onlyBinaryIncompatible>
+                        <accessModifier>protected</accessModifier>
+                        <breakBuildOnModifications>false</breakBuildOnModifications>
+                        <breakBuildOnBinaryIncompatibleModifications>true</breakBuildOnBinaryIncompatibleModifications>
+                        <includeSynthetic>false</includeSynthetic>
+                        <ignoreMissingClasses>false</ignoreMissingClasses>
+                    </parameter>
+                    <skip>${compatibility-check.skip}</skip>
+                    <skipPomModules>true</skipPomModules>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>verify-compatibility</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>cmp</goal>
                         </goals>
                     </execution>
                 </executions>
