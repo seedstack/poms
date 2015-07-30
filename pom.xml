@@ -20,7 +20,7 @@
 
     <groupId>org.seedstack</groupId>
     <artifactId>poms</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -55,7 +55,7 @@
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.5</nexus-staging-maven-plugin.version>
 
-        <seedstack.poms.version>2.0.0</seedstack.poms.version>
+        <seedstack.poms.version>2.0.1-SNAPSHOT</seedstack.poms.version>
         <seedstack.license.name>MPL 2.0</seedstack.license.name>
         <seedstack.license.url>https://www.mozilla.org/MPL/2.0/</seedstack.license.url>
         <seedstack.name>SeedStack</seedstack.name>
@@ -185,7 +185,7 @@
         <url>https://github.com/seedstack/poms</url>
         <connection>scm:git:git://github.com/seedstack/poms.git</connection>
         <developerConnection>scm:git:git@github.com:seedstack/poms.git</developerConnection>
-        <tag>v2.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
