@@ -25,7 +25,6 @@
 
     <modules>
         <module>license-templates</module>
-        <module>assembly-descriptors</module>
         <module>commons-bom</module>
         <module>guiceext-bom</module>
         <module>hibernate-bom</module>

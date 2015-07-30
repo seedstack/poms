@@ -27,7 +27,6 @@
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
         <maven-javadoc-plugin.version>2.10.2</maven-javadoc-plugin.version>
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
-        <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
         <maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
         <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
@@ -72,89 +71,8 @@
                     <version>${maven-javadoc-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <artifactId>maven-antrun-plugin</artifactId>
-                    <version>${maven-antrun-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.seedstack</groupId>
-                            <artifactId>assembly-descriptors</artifactId>
-                            <version>2.0.0-SNAPSHOT</version>
-                        </dependency>
-                    </dependencies>
-                    <executions>
-                        <execution>
-                            <id>fix-javadoc-stylesheet</id>
-                            <phase>prepare-package</phase>
-                            <configuration>
-                                <target>
-                                    <concat destfile="${project.build.directory}/site/apidocs/stylesheet.css" append="true">
-                                        <javaresource name="javadoc7-fix.css" />
-                                        <filterchain>
-                                            <stripjavacomments />
-                                        </filterchain>
-                                    </concat>
-                                </target>
-                            </configuration>
-                            <goals>
-                                <goal>run</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>${maven-assembly-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.seedstack</groupId>
-                            <artifactId>assembly-descriptors</artifactId>
-                            <version>2.0.0-SNAPSHOT</version>
-                        </dependency>
-                    </dependencies>
-                    <executions>
-                        <execution>
-                            <id>package-samples</id>
-                            <phase>none</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-                            <inherited>true</inherited>
-                            <configuration>
-                                <descriptorRefs>
-                                    <descriptorRef>samples-assembly</descriptorRef>
-                                </descriptorRefs>
-                                <appendAssemblyId>true</appendAssemblyId>
-                            </configuration>
-                        </execution>
-                        <execution>
-                            <id>package-diagrams</id>
-                            <phase>none</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-                            <inherited>true</inherited>
-                            <configuration>
-                                <descriptorRefs>
-                                    <descriptorRef>diagrams-assembly</descriptorRef>
-                                </descriptorRefs>
-                                <appendAssemblyId>true</appendAssemblyId>
-                            </configuration>
-                        </execution>
-                        <execution>
-                            <id>package-doc</id>
-                            <phase>none</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-                            <inherited>true</inherited>
-                            <configuration>
-                                <descriptorRefs>
-                                    <descriptorRef>doc-assembly</descriptorRef>
-                                </descriptorRefs>
-                                <appendAssemblyId>false</appendAssemblyId>
-                            </configuration>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
