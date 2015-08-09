@@ -63,6 +63,10 @@
         <seedstack.description>An enterprise-oriented full development stack</seedstack.description>
         <seedstack.url>http://github.com/seedstack</seedstack.url>
         <seedstack.owner>The ${seedstack.name} authors</seedstack.owner>
+
+        <license-check.skip>false</license-check.skip>
+        <license-check.fail>true</license-check.fail>
+        <license-header-check.skip>false</license-header-check.skip>
     </properties>
 
     <build>
@@ -109,6 +113,7 @@
                             <exclude>**/views/**/*.html</exclude>
                             <exclude>**/src/license/THIRD-PARTY.properties</exclude>
                         </excludes>
+                        <skip>${license-header-check.skip}</skip>
                     </configuration>
                     <executions>
                         <execution>
@@ -131,7 +136,7 @@
                     <artifactId>license-maven-plugin</artifactId>
                     <version>${codehaus.license-maven-plugin.version}</version>
                     <configuration>
-                        <failIfWarning>true</failIfWarning>
+                        <failIfWarning>${license-check.fail}</failIfWarning>
                         <includedScopes>compile</includedScopes>
                         <useMissingFile>true</useMissingFile>
                         <useRepositoryMissingFiles>false</useRepositoryMissingFiles>
@@ -139,6 +144,7 @@
                         <includedLicenses>
                             <includedLicense>NO_LICENSE_AT_THIS_LEVEL</includedLicense>
                         </includedLicenses>
+                        <skipAddThirdParty>${license-check.skip}</skipAddThirdParty>
                     </configuration>
                     <executions>
                         <execution>
