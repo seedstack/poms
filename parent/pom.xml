@@ -41,6 +41,8 @@
 
         <compatibility-check.skip>true</compatibility-check.skip>
         <compatibility-check.reference>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility-check.reference>
+
+        <it.excluded-categories>org.seedstack.seed.it.categories.NotSelfContained</it.excluded-categories>
     </properties>
 
     <build>
@@ -219,6 +221,7 @@
                         <seed.shell.port>${seed.shell.port}</seed.shell.port>
                         <seed.ws.port>${seed.ws.port}</seed.ws.port>
                     </systemProperties>
+                    <excludedGroups>${it.excluded-categories}</excludedGroups>
                 </configuration>
             </plugin>
             <plugin>
@@ -363,6 +366,12 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>all-tests</id>
+            <properties>
+                <it.excluded-categories/>
+            </properties>
         </profile>
     </profiles>
 </project>
