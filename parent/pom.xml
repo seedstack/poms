@@ -42,7 +42,7 @@
         <compatibility-check.skip>true</compatibility-check.skip>
         <compatibility-check.reference>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility-check.reference>
 
-        <it.excluded-categories>org.seedstack.seed.it.categories.NotSelfContained</it.excluded-categories>
+        <it.excluded-categories>org.seedstack.seed.it.internal.categories.NotSelfContained</it.excluded-categories>
     </properties>
 
     <build>
