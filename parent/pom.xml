@@ -39,7 +39,7 @@
         <java.source.version>1.6</java.source.version>
         <java.target.version>1.6</java.target.version>
 
-        <compatibility-check.skip>true</compatibility-check.skip>
+        <compatibility-check.skip>false</compatibility-check.skip>
         <compatibility-check.reference>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility-check.reference>
 
         <it.excluded-categories/>
@@ -137,48 +137,6 @@
                         <phase>process-classes</phase>
                         <goals>
                             <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.github.siom79.japicmp</groupId>
-                <artifactId>japicmp-maven-plugin</artifactId>
-                <version>${japicmp-maven-plugin.version}</version>
-                <configuration>
-                    <oldVersion>
-                        <dependency>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${project.artifactId}</artifactId>
-                            <version>${compatibility-check.reference}</version>
-                        </dependency>
-                    </oldVersion>
-                    <newVersion>
-                        <file>
-                            <path>${project.build.directory}/${project.build.finalName}.jar</path>
-                        </file>
-                    </newVersion>
-                    <parameter>
-                        <excludes>
-                            <exclude>*.internal.*</exclude>
-                        </excludes>
-                        <onlyModified>true</onlyModified>
-                        <onlyBinaryIncompatible>true</onlyBinaryIncompatible>
-                        <accessModifier>protected</accessModifier>
-                        <breakBuildOnModifications>false</breakBuildOnModifications>
-                        <breakBuildOnBinaryIncompatibleModifications>true</breakBuildOnBinaryIncompatibleModifications>
-                        <includeSynthetic>false</includeSynthetic>
-                        <ignoreMissingClasses>false</ignoreMissingClasses>
-                    </parameter>
-                    <skip>${compatibility-check.skip}</skip>
-                    <skipPomModules>true</skipPomModules>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>verify-compatibility</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>cmp</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -373,6 +331,55 @@
             <properties>
                 <it.internal-excluded-categories/>
             </properties>
+        </profile>
+        <profile>
+            <id>compatibility-check</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.siom79.japicmp</groupId>
+                        <artifactId>japicmp-maven-plugin</artifactId>
+                        <version>${japicmp-maven-plugin.version}</version>
+                        <configuration>
+                            <oldVersion>
+                                <dependency>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <version>${compatibility-check.reference}</version>
+                                </dependency>
+                            </oldVersion>
+                            <newVersion>
+                                <file>
+                                    <path>${project.build.directory}/${project.build.finalName}.jar</path>
+                                </file>
+                            </newVersion>
+                            <parameter>
+                                <excludes>
+                                    <exclude>*.internal.*</exclude>
+                                </excludes>
+                                <onlyModified>true</onlyModified>
+                                <onlyBinaryIncompatible>true</onlyBinaryIncompatible>
+                                <accessModifier>protected</accessModifier>
+                                <breakBuildOnModifications>false</breakBuildOnModifications>
+                                <breakBuildOnBinaryIncompatibleModifications>true</breakBuildOnBinaryIncompatibleModifications>
+                                <includeSynthetic>false</includeSynthetic>
+                                <ignoreMissingClasses>false</ignoreMissingClasses>
+                            </parameter>
+                            <skip>${compatibility-check.skip}</skip>
+                            <skipPomModules>true</skipPomModules>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>verify-compatibility</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>cmp</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>
