@@ -39,8 +39,10 @@
         <java.source.version>1.6</java.source.version>
         <java.target.version>1.6</java.target.version>
 
-        <compatibility-check.skip>false</compatibility-check.skip>
-        <compatibility-check.reference>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility-check.reference>
+        <compatibility.skip>false</compatibility.skip>
+        <comatibility.groupId>${project.groupId}</comatibility.groupId>
+        <comatibility.artifactId>${project.artifactId}</comatibility.artifactId>
+        <compatibility.version>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility.version>
     </properties>
 
     <build>
@@ -323,7 +325,7 @@
             </build>
         </profile>
         <profile>
-            <id>compatibility-check</id>
+            <id>compatibility</id>
             <build>
                 <plugins>
                     <plugin>
@@ -333,9 +335,9 @@
                         <configuration>
                             <oldVersion>
                                 <dependency>
-                                    <groupId>${project.groupId}</groupId>
-                                    <artifactId>${project.artifactId}</artifactId>
-                                    <version>${compatibility-check.reference}</version>
+                                    <groupId>${compatibility.groupId}</groupId>
+                                    <artifactId>${compatibility.artifactId}</artifactId>
+                                    <version>${compatibility.version}</version>
                                 </dependency>
                             </oldVersion>
                             <newVersion>
@@ -355,7 +357,7 @@
                                 <includeSynthetic>false</includeSynthetic>
                                 <ignoreMissingClasses>false</ignoreMissingClasses>
                             </parameter>
-                            <skip>${compatibility-check.skip}</skip>
+                            <skip>${compatibility.skip}</skip>
                             <skipPomModules>true</skipPomModules>
                         </configuration>
                         <executions>
