@@ -40,8 +40,8 @@
         <java.target.version>1.6</java.target.version>
 
         <compatibility.skip>false</compatibility.skip>
-        <comatibility.groupId>${project.groupId}</comatibility.groupId>
-        <comatibility.artifactId>${project.artifactId}</comatibility.artifactId>
+        <compatibility.groupId>${project.groupId}</compatibility.groupId>
+        <compatibility.artifactId>${project.artifactId}</compatibility.artifactId>
         <compatibility.version>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility.version>
     </properties>
 
