@@ -41,9 +41,6 @@
 
         <compatibility-check.skip>false</compatibility-check.skip>
         <compatibility-check.reference>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility-check.reference>
-
-        <it.excluded-categories/>
-        <it.internal-excluded-categories>${it.excluded-categories}</it.internal-excluded-categories>
     </properties>
 
     <build>
@@ -180,7 +177,6 @@
                         <seed.shell.port>${seed.shell.port}</seed.shell.port>
                         <seed.ws.port>${seed.ws.port}</seed.ws.port>
                     </systemProperties>
-                    <excludedGroups>${it.internal-excluded-categories}</excludedGroups>
                 </configuration>
             </plugin>
             <plugin>
@@ -325,12 +321,6 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-        <profile>
-            <id>all-tests</id>
-            <properties>
-                <it.internal-excluded-categories/>
-            </properties>
         </profile>
         <profile>
             <id>compatibility-check</id>
