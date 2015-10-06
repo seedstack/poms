@@ -1,5 +1,6 @@
 # Version 2.1.0 (2015-11-26)
 
+* [brk] `seedstack.poms.version` Maven property is no longer available. 
 * [brk] Remove all BOM modules in favor of distribution-specific BOMs.
 * [brk] Rename `parent` module as `parent-internal` to make room for eventual distribution-specific parent.  
 
