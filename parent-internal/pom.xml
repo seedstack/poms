@@ -70,21 +70,17 @@
                     <version>${maven-source-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>${build-helper-maven-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin.version}</version>
-                </plugin>
-                <plugin>
                     <artifactId>maven-antrun-plugin</artifactId>
                     <version>${maven-antrun-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>${maven-assembly-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${build-helper-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
@@ -97,6 +93,64 @@
                         <dataFile>${project.build.directory}/jacoco-all.exec</dataFile>
                         <outputDirectory>${project.reporting.outputDirectory}/jacoco-all</outputDirectory>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.siom79.japicmp</groupId>
+                    <artifactId>japicmp-maven-plugin</artifactId>
+                    <version>${japicmp-maven-plugin.version}</version>
+                    <configuration>
+                        <oldVersion>
+                            <dependency>
+                                <groupId>${compatibility.groupId}</groupId>
+                                <artifactId>${compatibility.artifactId}</artifactId>
+                                <version>${compatibility.version}</version>
+                            </dependency>
+                        </oldVersion>
+                        <newVersion>
+                            <file>
+                                <path>${project.build.directory}/${project.build.finalName}.jar</path>
+                            </file>
+                        </newVersion>
+                        <parameter>
+                            <excludes>
+                                <exclude>*.internal.*</exclude>
+                            </excludes>
+                            <onlyModified>true</onlyModified>
+                            <onlyBinaryIncompatible>true</onlyBinaryIncompatible>
+                            <accessModifier>protected</accessModifier>
+                            <breakBuildOnModifications>false</breakBuildOnModifications>
+                            <breakBuildOnBinaryIncompatibleModifications>true</breakBuildOnBinaryIncompatibleModifications>
+                            <includeSynthetic>false</includeSynthetic>
+                            <ignoreMissingClasses>false</ignoreMissingClasses>
+                        </parameter>
+                        <skip>${compatibility.skip}</skip>
+                        <skipPomModules>true</skipPomModules>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>verify-compatibility</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>cmp</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadoc</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                            <configuration>
+                                <excludePackageNames>*.internal.*</excludePackageNames>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -307,19 +361,6 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>${maven-javadoc-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadoc</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                                <configuration>
-                                    <excludePackageNames>*.internal.*</excludePackageNames>
-                                </configuration>
-                            </execution>
-                        </executions>
                     </plugin>
                 </plugins>
             </build>
@@ -331,44 +372,6 @@
                     <plugin>
                         <groupId>com.github.siom79.japicmp</groupId>
                         <artifactId>japicmp-maven-plugin</artifactId>
-                        <version>${japicmp-maven-plugin.version}</version>
-                        <configuration>
-                            <oldVersion>
-                                <dependency>
-                                    <groupId>${compatibility.groupId}</groupId>
-                                    <artifactId>${compatibility.artifactId}</artifactId>
-                                    <version>${compatibility.version}</version>
-                                </dependency>
-                            </oldVersion>
-                            <newVersion>
-                                <file>
-                                    <path>${project.build.directory}/${project.build.finalName}.jar</path>
-                                </file>
-                            </newVersion>
-                            <parameter>
-                                <excludes>
-                                    <exclude>*.internal.*</exclude>
-                                </excludes>
-                                <onlyModified>true</onlyModified>
-                                <onlyBinaryIncompatible>true</onlyBinaryIncompatible>
-                                <accessModifier>protected</accessModifier>
-                                <breakBuildOnModifications>false</breakBuildOnModifications>
-                                <breakBuildOnBinaryIncompatibleModifications>true</breakBuildOnBinaryIncompatibleModifications>
-                                <includeSynthetic>false</includeSynthetic>
-                                <ignoreMissingClasses>false</ignoreMissingClasses>
-                            </parameter>
-                            <skip>${compatibility.skip}</skip>
-                            <skipPomModules>true</skipPomModules>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>verify-compatibility</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>cmp</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                     </plugin>
                 </plugins>
             </build>
