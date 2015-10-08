@@ -26,6 +26,7 @@
 
     <modules>
         <module>license-templates</module>
+        <module>arquillian-composite</module>
         <module>parent-internal</module>
     </modules>
 
@@ -43,6 +44,7 @@
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.5</nexus-staging-maven-plugin.version>
 
+        <seedstack.poms.version>2.1.0-SNAPSHOT</seedstack.poms.version>
         <seedstack.license.name>MPL 2.0</seedstack.license.name>
         <seedstack.license.url>https://www.mozilla.org/MPL/2.0/</seedstack.license.url>
         <seedstack.name>SeedStack</seedstack.name>
@@ -54,6 +56,31 @@
         <license-check.skip>false</license-check.skip>
         <license-check.fail>true</license-check.fail>
         <license-header-check.skip>false</license-header-check.skip>
+
+        <!-- Java specifications -->
+        <jta.version>1.1</jta.version>
+        <javax-el.version>2.2.5</javax-el.version>
+        <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
+        <jsr311-api.version>1.1.1</jsr311-api.version>
+        <javax.websocket-api.version>1.0</javax.websocket-api.version>
+
+        <!-- Common dependencies -->
+        <slf4j.version>1.7.7</slf4j.version>
+        <jackson.version>2.4.4</jackson.version>
+        <jansi.version>1.11</jansi.version>
+        <logback.version>1.1.3</logback.version>
+
+        <!-- Testing dependencies -->
+        <arquillian.version>1.1.5.Final</arquillian.version>
+        <jsonassert.version>1.2.3</jsonassert.version>
+        <fest-reflect.version>1.4.1</fest-reflect.version>
+        <mockito.version>1.10.19</mockito.version>
+        <tomcat.version>7.0.57</tomcat.version>
+        <junit.version>4.12</junit.version>
+        <assertj.version>2.0.0</assertj.version>
+        <rest-assured.version>2.5.0</rest-assured.version>
+        <tomcat.version>7.0.57</tomcat.version>
+        <jmockit.version>1.17</jmockit.version>
     </properties>
 
     <build>
