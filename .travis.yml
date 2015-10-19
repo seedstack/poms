@@ -13,6 +13,6 @@ cache:
 
 install: /bin/true
 
-script: mvn -q -B -T 2 install
-
-after_success: mvn deploy
+script:
+  - mvn -q install
+  - mvn -q deploy

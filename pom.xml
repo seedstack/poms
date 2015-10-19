@@ -219,8 +219,8 @@
                             <configuration>
                                 <publisher>
                                     <contextUrl>https://oss.jfrog.org</contextUrl>
-                                    <username>{{OJO_USER}}</username>
-                                    <password>{{OJO_PASSWORD}}</password>
+                                    <username>{{BINTRAY_USER}}</username>
+                                    <password>{{BINTRAY_KEY}}</password>
                                     <repoKey>libs-release-local</repoKey>
                                     <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
                                 </publisher>
