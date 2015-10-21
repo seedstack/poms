@@ -189,7 +189,7 @@
                     <configuration>
                         <mavenExecutorId>forked-path</mavenExecutorId>
                         <useReleaseProfile>false</useReleaseProfile>
-                        <arguments>${arguments} -Psigning,sources,javadoc</arguments>
+                        <arguments>${arguments} -Prelease,javadoc</arguments>
                         <pushChanges>${pushChanges}</pushChanges>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <scmCommentPrefix>[ci skip][release]:</scmCommentPrefix>
