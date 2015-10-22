@@ -324,27 +324,5 @@
             <name>bintray-plugins</name>
             <url>http://jcenter.bintray.com</url>
         </pluginRepository>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <id>bintray-jfrog-jfrog-jars</id>
-            <name>bintray-plugins</name>
-            <url>http://dl.bintray.com/jfrog/jfrog-jars</url>
-        </pluginRepository>
-        <pluginRepository>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <id>ojo-plugin-snapshots</id>
-            <name>ojo</name>
-            <url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
-        </pluginRepository>
     </pluginRepositories>
 </project>
