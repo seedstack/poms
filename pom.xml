@@ -299,30 +299,14 @@
         <tag>HEAD</tag>
     </scm>
 
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <id>central</id>
-            <name>bintray</name>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
     <pluginRepositories>
         <pluginRepository>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <id>central</id>
+            <id>bintray-jfrog-jfrog-jars</id>
             <name>bintray-plugins</name>
-            <url>http://jcenter.bintray.com</url>
+            <url>http://dl.bintray.com/jfrog/jfrog-jars</url>
         </pluginRepository>
     </pluginRepositories>
 </project>
