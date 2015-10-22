@@ -11,18 +11,8 @@ cache:
   directories:
     - "$HOME/.m2/repository"
 
-install: |
-  echo "<settings>
-         <mirrors>
-           <mirror>
-             <id>bintray</id>
-             <name>bintray</name>
-             <url>http://jcenter.bintray.com</url>
-             <mirrorOf>central</mirrorOf>
-           </mirror>
-         </mirrors>
-       </settings>" > ~/.m2/settings.xml
+install: rm ~/.m2/settings.xml
 
 script:
-  - mvn -U install
-  - if [ $TRAVIS_PULL_REQUEST = false ] && [ $TRAVIS_BRANCH = master ]; then mvn deploy; fi
+  - mvn -q -U install
+  - if [ $TRAVIS_PULL_REQUEST = false ] && [ $TRAVIS_BRANCH = master ]; then mvn -q deploy; fi
