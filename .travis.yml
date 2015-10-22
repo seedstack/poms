@@ -11,8 +11,6 @@ cache:
   directories:
     - "$HOME/.m2/repository"
 
-install: /bin/true
+install: mvn -q install
 
-script:
-  - mvn -q install
-  - mvn -q deploy
+script: if [ $TRAVIS_PULL_REQUEST = false ] && [ $TRAVIS_BRANCH = master ]; then mvn -q deploy; fi
