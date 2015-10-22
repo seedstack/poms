@@ -30,8 +30,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Release properties -->
-        <arguments/>
-        <pushChanges>true</pushChanges>
+        <bintray.subject>seedstack</bintray.subject>
+        <bintray.repo>jars</bintray.repo>
+        <bintray.package>poms</bintray.package>
 
         <!-- SeedStack properties -->
         <seedstack.poms.version>2.1.0-SNAPSHOT</seedstack.poms.version>
@@ -221,8 +222,8 @@
                                     <contextUrl>https://oss.jfrog.org</contextUrl>
                                     <username>{{BINTRAY_USER}}</username>
                                     <password>{{BINTRAY_KEY}}</password>
-                                    <repoKey>libs-release-local</repoKey>
-                                    <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
+                                    <repoKey>oss-release-local</repoKey>
+                                    <snapshotRepoKey>oss-snapshot-local</snapshotRepoKey>
                                 </publisher>
                             </configuration>
                         </execution>
@@ -298,14 +299,6 @@
         <developerConnection>scm:git:git@github.com:seedstack/poms.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>bintray-snapshots</id>
-            <name>poms</name>
-            <url>https://api.bintray.com/maven/seedstack/jars/poms</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <pluginRepositories>
         <pluginRepository>
