@@ -29,13 +29,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <!-- Release properties -->
-        <bintray.subject>seedstack</bintray.subject>
-        <bintray.repo>jars</bintray.repo>
-        <bintray.package>poms</bintray.package>
-
         <!-- SeedStack properties -->
-        <seedstack.poms.version>2.1.0-SNAPSHOT</seedstack.poms.version>
         <seedstack.license.name>MPL 2.0</seedstack.license.name>
         <seedstack.license.url>https://www.mozilla.org/MPL/2.0/</seedstack.license.url>
         <seedstack.name>SeedStack</seedstack.name>
@@ -48,6 +42,9 @@
         <license-check.skip>false</license-check.skip>
         <license-check.fail>true</license-check.fail>
         <license-header-check.skip>false</license-header-check.skip>
+
+        <!-- POMS version (need to be overridden by sub-projects) -->
+        <poms.version>${project.version}</poms.version>
 
         <!-- Maven plugins -->
         <mycila.license-maven-plugin.version>2.10</mycila.license-maven-plugin.version>
@@ -154,7 +151,7 @@
                         <dependency>
                             <groupId>org.seedstack</groupId>
                             <artifactId>license-templates</artifactId>
-                            <version>2.1.0-SNAPSHOT</version>
+                            <version>${poms.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
