@@ -1,8 +1,6 @@
 <!--
 
-    Copyright (c) 2013-2015 by The SeedStack authors. All rights reserved.
-
-    This file is part of SeedStack, An enterprise-oriented full development stack.
+    Copyright (c) 2013-2015, The SeedStack authors <http://seedstack.org>
 
     This Source Code Form is subject to the terms of the Mozilla Public
     License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -19,7 +17,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>license-templates</module>
         <module>arquillian-composite</module>
         <module>parent-internal</module>
     </modules>
@@ -34,17 +31,14 @@
         <seedstack.license.url>https://www.mozilla.org/MPL/2.0/</seedstack.license.url>
         <seedstack.name>SeedStack</seedstack.name>
         <seedstack.years>2013-2015</seedstack.years>
-        <seedstack.description>An enterprise-oriented full development stack</seedstack.description>
-        <seedstack.url>http://github.com/seedstack</seedstack.url>
+        <seedstack.description>The lean development stack</seedstack.description>
+        <seedstack.url>http://seedstack.org</seedstack.url>
         <seedstack.owner>The ${seedstack.name} authors</seedstack.owner>
 
         <!-- Checks -->
         <license-check.skip>false</license-check.skip>
         <license-check.fail>true</license-check.fail>
         <license-header-check.skip>false</license-header-check.skip>
-
-        <!-- POMS version (need to be overridden by sub-projects) -->
-        <poms.version>${project.version}</poms.version>
 
         <!-- Maven plugins -->
         <mycila.license-maven-plugin.version>2.10</mycila.license-maven-plugin.version>
@@ -102,15 +96,14 @@
                     <artifactId>license-maven-plugin</artifactId>
                     <version>${mycila.license-maven-plugin.version}</version>
                     <configuration>
-                        <header>org/seedstack/licenses/${seedstack.license.name}.license</header>
+                        <header>com/mycila/maven/plugin/license/templates/MPL-2.txt</header>
                         <strictCheck>true</strictCheck>
                         <keywords>
                             <keyword>Copyright</keyword>
                         </keywords>
                         <properties>
                             <owner>${seedstack.owner}</owner>
-                            <years>${seedstack.years}</years>
-                            <description>${seedstack.description}</description>
+                            <email>${seedstack.url}</email>
                         </properties>
                         <mapping>
                             <handlers>SCRIPT_STYLE</handlers>
@@ -147,13 +140,6 @@
                             </goals>
                         </execution>
                     </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.seedstack</groupId>
-                            <artifactId>license-templates</artifactId>
-                            <version>${poms.version}</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
