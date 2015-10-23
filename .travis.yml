@@ -11,8 +11,8 @@ cache:
   directories:
     - "$HOME/.m2/repository"
 
-install: rm ~/.m2/settings.xml
+install:
+  - rm ~/.m2/settings.xml
+  - if [ $TRAVIS_PULL_REQUEST = false ] && [ $TRAVIS_BRANCH = master ]; then GOAL=deploy; else GOAL=install; fi
 
-script:
-  - mvn -q -U install
-  - if [ $TRAVIS_PULL_REQUEST = false ] && [ $TRAVIS_BRANCH = master ]; then mvn -q deploy; fi
+script: mvn -q -U $GOAL
