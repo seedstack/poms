@@ -122,8 +122,8 @@
                             <exclude>**/*.puml</exclude>
                             <exclude>**/*.uxf</exclude>
                             <exclude>**/*.svg</exclude>
-                            <exclude>yworks-uml-doclet/**</exclude>
                             <exclude>**/.jshintrc</exclude>
+                            <exclude>**/archetype-resources/**</exclude>
                             <exclude>**/bower_components/**</exclude>
                             <exclude>**/node_modules/**</exclude>
                             <exclude>**/templates/**/*.html</exclude>
