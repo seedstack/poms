@@ -15,4 +15,4 @@ install:
   - rm ~/.m2/settings.xml
   - if [ $TRAVIS_PULL_REQUEST = false ] && [ $TRAVIS_BRANCH = master ]; then GOAL=deploy; else GOAL=install; fi
 
-script: mvn -q -U $GOAL
+script: mvn -q -U -Pbuild-number $GOAL
