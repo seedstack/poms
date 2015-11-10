@@ -26,15 +26,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <!-- SeedStack properties -->
-        <seedstack.license.name>MPL 2.0</seedstack.license.name>
-        <seedstack.license.url>https://www.mozilla.org/MPL/2.0/</seedstack.license.url>
-        <seedstack.name>SeedStack</seedstack.name>
-        <seedstack.years>2013-2015</seedstack.years>
-        <seedstack.description>The lean development stack</seedstack.description>
-        <seedstack.url>http://seedstack.org</seedstack.url>
-        <seedstack.owner>The ${seedstack.name} authors</seedstack.owner>
-
         <!-- Checks -->
         <license-check.skip>false</license-check.skip>
         <license-check.fail>true</license-check.fail>
@@ -102,8 +93,8 @@
                             <keyword>Copyright</keyword>
                         </keywords>
                         <properties>
-                            <owner>${seedstack.owner}</owner>
-                            <email>${seedstack.url}</email>
+                            <owner>The SeedStack authors</owner>
+                            <email>http://seedstack.org</email>
                         </properties>
                         <mapping>
                             <handlers>SCRIPT_STYLE</handlers>
@@ -225,14 +216,15 @@
         </plugins>
     </build>
 
-    <inceptionYear>${seedstack.years}</inceptionYear>
-    <description>${seedstack.description}</description>
-    <url>${seedstack.url}</url>
+    <inceptionYear>2013-2015</inceptionYear>
+    <description>The lean development stack</description>
+    <url>http://seedstack.org</url>
+    <name>${project.artifactId}</name>
 
     <licenses>
         <license>
-            <name>${seedstack.license.name}</name>
-            <url>${seedstack.license.url}</url>
+            <name>MPL 2.0</name>
+            <url>https://www.mozilla.org/MPL/2.0/</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
