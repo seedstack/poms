@@ -1,6 +1,6 @@
 # SEED poms 
 
-[![Build status](https://travis-ci.org/seedstack/poms.svg?branch=master)](https://travis-ci.org/seedstack/poms) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.seedstack/poms/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/org.seedstack/poms)
+[![Build status](https://travis-ci.org/seedstack/poms.svg?branch=master)](https://travis-ci.org/seedstack/poms) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.seedstack.poms/poms/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/org.seedstack.poms/poms)
 
 Common poms for SEED stack.
 
