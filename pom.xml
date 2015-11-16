@@ -73,7 +73,7 @@
         <jsonassert.version>1.2.3</jsonassert.version>
         <fest-reflect.version>1.4.1</fest-reflect.version>
         <mockito.version>1.10.19</mockito.version>
-        <tomcat.version>7.0.65</tomcat.version>
+        <tomcat.version>7.0.57</tomcat.version>
         <junit.version>4.12</junit.version>
         <assertj.version>2.0.0</assertj.version>
         <rest-assured.version>2.5.0</rest-assured.version>
