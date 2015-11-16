@@ -252,9 +252,6 @@
                             <goals>
                                 <goal>jar</goal>
                             </goals>
-                            <configuration>
-                                <excludePackageNames>*.internal.*</excludePackageNames>
-                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
