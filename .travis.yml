@@ -13,7 +13,7 @@ cache:
 
 install:
   - rm ~/.m2/settings.xml
-  - if [ $TRAVIS_PULL_REQUEST = false ] && [ $TRAVIS_BRANCH = master ]; then GOAL=deploy; else GOAL=install; fi
+  - if [[ $TRAVIS_PULL_REQUEST = false ]] && [[ $TRAVIS_BRANCH = master ]] || [[ $TRAVIS_TAG = v* ]]; then GOAL=deploy; else GOAL=install; fi
   - echo $GOAL
   - if [[ $TRAVIS_TAG = v* ]]; then mvn org.seedstack:seedstack-maven-plugin:release; fi
 
