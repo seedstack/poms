@@ -14,7 +14,6 @@ cache:
 install:
   - rm ~/.m2/settings.xml
   - if [[ $TRAVIS_PULL_REQUEST = false ]] && [[ $TRAVIS_BRANCH = master ]] || [[ $TRAVIS_TAG = v* ]]; then GOAL=deploy; else GOAL=install; fi
-  - echo $GOAL
-  - if [[ $TRAVIS_TAG = v* ]]; then mvn org.seedstack:seedstack-maven-plugin:release; fi
+  - if [[ $TRAVIS_TAG = v* ]]; then mvn -U -q org.seedstack:seedstack-maven-plugin:release; fi
 
 script: mvn -U -Pbuild-number $GOAL
