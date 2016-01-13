@@ -230,6 +230,11 @@
         </license>
     </licenses>
 
+    <organization>
+        <name>SeedStack</name>
+        <url>http://seedstack.org</url>
+    </organization>
+
     <developers>
         <developer>
             <name>Adrien LAUER</name>
@@ -264,6 +269,13 @@
             <email>thierry.bouvet@mpsa.com</email>
             <organization>PSA Peugeot Citroën</organization>
             <organizationUrl>http://www.psa-peugeot-citroen.com</organizationUrl>
+            <timezone>Europe/Paris</timezone>
+        </developer>
+        <developer>
+            <name>Tuan DO CAO</name>
+            <email>tuan.docao@ext.mpsa.com</email>
+            <organization>Infotel</organization>
+            <organizationUrl>http://www.infotel.com/</organizationUrl>
             <timezone>Europe/Paris</timezone>
         </developer>
     </developers>
