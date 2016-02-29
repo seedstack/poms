@@ -13,7 +13,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>2.4.0-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -39,8 +39,6 @@
         <!-- Maven plugins -->
         <mycila.license-maven-plugin.version>2.10</mycila.license-maven-plugin.version>
         <codehaus.license-maven-plugin.version>1.8</codehaus.license-maven-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.5</nexus-staging-maven-plugin.version>
-        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <build-helper-maven-plugin.version>1.9.1</build-helper-maven-plugin.version>
         <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
         <maven-failsafe-plugin.version>2.18.1</maven-failsafe-plugin.version>
@@ -50,8 +48,6 @@
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
         <maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
         <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
-        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
-        <animal-sniffer-maven-plugin.version>1.14</animal-sniffer-maven-plugin.version>
         <coveralls-maven-plugin.version>3.1.0</coveralls-maven-plugin.version>
         <jacoco-maven-plugin.version>0.7.4.201502262128</jacoco-maven-plugin.version>
         <japicmp-maven-plugin.version>0.5.2</japicmp-maven-plugin.version>
@@ -113,7 +109,6 @@
                             <exclude>AUTHORS</exclude>
                             <exclude>CONTRIBUTORS</exclude>
                             <exclude>LICENSE</exclude>
-                            <exclude>Procfile</exclude>
                             <exclude>**/mime.types</exclude>
                             <exclude>**/*.csv</exclude>
                             <exclude>**/*.puml</exclude>
@@ -121,10 +116,6 @@
                             <exclude>**/*.svg</exclude>
                             <exclude>**/.jshintrc</exclude>
                             <exclude>**/archetype-resources/**</exclude>
-                            <exclude>**/bower_components/**</exclude>
-                            <exclude>**/node_modules/**</exclude>
-                            <exclude>**/templates/**/*.html</exclude>
-                            <exclude>**/views/**/*.html</exclude>
                             <exclude>**/src/license/THIRD-PARTY.properties</exclude>
                         </excludes>
                         <skip>${license-header-check.skip}</skip>
@@ -179,7 +170,7 @@
                                         <version>3</version>
                                     </requireMavenVersion>
                                     <requireJavaVersion>
-                                        <version>1.7</version>
+                                        <version>1.8</version>
                                     </requireJavaVersion>
                                 </rules>
                             </configuration>
