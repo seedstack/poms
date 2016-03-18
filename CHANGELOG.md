@@ -1,3 +1,10 @@
+# Version 2.3.1 (?)
+
+* [chg] Update Servlet API to 3.1.0
+* [chg] Update slf4j to 1.7.19
+* [chg] Update jackson to 2.6.5
+* [chg] Update logback to 1.1.6
+
 # Version 2.3.0 (2016-01-14)
 
 * [new] Releases are pushed directly to bintray with the `release` profile.
