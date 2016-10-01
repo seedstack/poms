@@ -56,10 +56,11 @@
 
         <!-- Java specifications -->
         <jta.version>1.1</jta.version>
-        <javax-el.version>3.0.0</javax-el.version>
-        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
-        <javax.ws.rs-api.version>2.0.1</javax.ws.rs-api.version>
-        <jms-api.version>1.1-rev-1</jms-api.version>
+        <javax.annotation.version>1.2</javax.annotation.version>
+        <javax.validation.version>1.1.0.Final</javax.validation.version>
+        <javax.el.version>3.0.0</javax.el.version>
+        <javax.servlet.version>3.1.0</javax.servlet.version>
+        <javax.ws.rs.version>2.0.1</javax.ws.rs.version>
         <javax.websocket-api.version>1.1</javax.websocket-api.version>
 
         <!-- Common dependencies -->
