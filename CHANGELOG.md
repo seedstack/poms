@@ -1,3 +1,11 @@
+# Version 3.0.0 (2016-12-12)
+
+* [brk] Requires Java 8 to build.
+* [brk] Remove version for JAX-RS 1.
+* [chg] Update Jansi to 1.14.
+* [chg] Update AssertJ to 3.6.1.
+* [chg] Add more memory for integration tests.
+
 # Version 2.4.0 (2016-04-19)
 
 * [chg] Update Javax EL API to 3.0.0
