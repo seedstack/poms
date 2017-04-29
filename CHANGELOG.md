@@ -1,3 +1,7 @@
+# Version 3.0.1 (2017-04-29)
+
+* [fix] Fix surefire and failsafe configuration which was preventing coverage instrumentation.
+
 # Version 3.0.0 (2016-12-12)
 
 * [brk] Requires Java 8 to build.

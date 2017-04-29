@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.seedstack.poms</groupId>
         <artifactId>poms</artifactId>
-        <version>3.0.0-SNAPSHOT</version>
+        <version>3.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>parent-internal</artifactId>
@@ -92,7 +92,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${argLine}</argLine>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -100,7 +100,7 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven-failsafe-plugin.version}</version>
                     <configuration>
-                        <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${argLine}</argLine>
                         <systemProperties>
                             <java.awt.headless>true</java.awt.headless>
                             <tomcat.http.port>${tomcat.http.port}</tomcat.http.port>
