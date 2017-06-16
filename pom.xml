@@ -53,6 +53,7 @@
         <japicmp-maven-plugin.version>0.5.2</japicmp-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+        <findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
 
         <!-- Java specifications -->
         <jta.version>1.1</jta.version>
@@ -80,6 +81,9 @@
         <assertj.version>3.6.1</assertj.version>
         <rest-assured.version>2.9.0</rest-assured.version>
         <jmockit.version>1.22</jmockit.version>
+
+        <!-- Build dependencies -->
+        <findbugs.version>3.0.1</findbugs.version>
     </properties>
 
     <build>
