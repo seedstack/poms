@@ -223,7 +223,6 @@
                             </goals>
                             <configuration>
                                 <skip>${quality.skip}</skip>
-                                <excludeFilterFile>${project.basedir}/findbugs.xml</excludeFilterFile>
                                 <effort>Max</effort>
                                 <threshold>Low</threshold>
                                 <xmlOutput>true</xmlOutput>
