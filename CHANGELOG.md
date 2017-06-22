@@ -1,3 +1,12 @@
+# Version 3.1.0 (2017-07-??)
+
+* [chg] Add profile for quality check with findbugs
+* [chg] Update SLF4J to 1.7.25
+* [chg] Update Jackson to 2.8.9
+* [chg] Update Jansi to 1.16
+* [chg] Update Logback to 1.2.3
+* [chg] Update AssertJ to 3.8.0
+
 # Version 3.0.1 (2017-04-29)
 
 * [fix] Fix surefire and failsafe configuration which was preventing coverage instrumentation.
