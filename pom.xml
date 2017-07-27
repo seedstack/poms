@@ -176,6 +176,7 @@
                                     <requireJavaVersion>
                                         <version>1.8</version>
                                     </requireJavaVersion>
+                                    <requireUpperBoundDeps/>
                                 </rules>
                             </configuration>
                         </execution>

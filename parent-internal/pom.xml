@@ -298,12 +298,6 @@
     <dependencies>
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
-            <artifactId>jsr305</artifactId>
-            <version>${findbugs.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.findbugs</groupId>
             <artifactId>annotations</artifactId>
             <version>${findbugs.version}</version>
             <scope>provided</scope>
