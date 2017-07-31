@@ -1,4 +1,4 @@
-# Version 3.1.0 (2017-07-??)
+# Version 3.1.0 (2017-07-31)
 
 * [chg] Add profile for quality check with findbugs
 * [chg] Update JTA to 1.2
