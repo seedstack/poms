@@ -1,6 +1,7 @@
 # Version 3.1.0 (2017-07-??)
 
 * [chg] Add profile for quality check with findbugs
+* [chg] Update JTA to 1.2
 * [chg] Update SLF4J to 1.7.25
 * [chg] Update Jackson to 2.8.9
 * [chg] Update Jansi to 1.16
