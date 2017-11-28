@@ -1,3 +1,7 @@
+# Version 3.1.1 (2017-11-28)
+
+* [new] Add non-failing checkstyle to quality check
+
 # Version 3.1.0 (2017-07-31)
 
 * [chg] Add profile for quality check with findbugs
