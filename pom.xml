@@ -1,6 +1,6 @@
 <!--
 
-    Copyright © 2013-2017, The SeedStack authors <http://seedstack.org>
+    Copyright © 2013-2018, The SeedStack authors <http://seedstack.org>
 
     This Source Code Form is subject to the terms of the Mozilla Public
     License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>3.1.1-SNAPSHOT</version>
+    <version>3.1.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -80,7 +80,7 @@
         <junit.version>4.12</junit.version>
         <assertj.version>3.8.0</assertj.version>
         <rest-assured.version>2.9.0</rest-assured.version>
-        <jmockit.version>1.22</jmockit.version>
+        <jmockit.version>1.37</jmockit.version>
 
         <!-- Build dependencies -->
         <findbugs.version>3.0.1</findbugs.version>
@@ -226,7 +226,7 @@
         </plugins>
     </build>
 
-    <inceptionYear>2013-2017</inceptionYear>
+    <inceptionYear>2013-2018</inceptionYear>
     <description>The lean development stack</description>
     <url>http://seedstack.org</url>
     <name>${project.artifactId}</name>
