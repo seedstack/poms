@@ -48,13 +48,14 @@
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
         <maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
+        <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
         <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
         <coveralls-maven-plugin.version>3.1.0</coveralls-maven-plugin.version>
         <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
-        <japicmp-maven-plugin.version>0.5.2</japicmp-maven-plugin.version>
+        <japicmp-maven-plugin.version>0.8.1</japicmp-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
-        <findbugs-maven-plugin.version>3.0.4</findbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>3.1.0</spotbugs-maven-plugin.version>
 
         <!-- Java specifications -->
         <jta.version>1.2</jta.version>
@@ -83,7 +84,7 @@
         <jmockit.version>1.37</jmockit.version>
 
         <!-- Build dependencies -->
-        <findbugs.version>3.0.1</findbugs.version>
+        <spotbugs.version>3.1.1</spotbugs.version>
         <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
     </properties>
 
