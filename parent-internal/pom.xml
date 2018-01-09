@@ -50,11 +50,6 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>${maven-install-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>
                     <version>${maven-antrun-plugin.version}</version>
                 </plugin>
@@ -68,19 +63,6 @@
                     <artifactId>build-helper-maven-plugin</artifactId>
                     <version>${build-helper-maven-plugin.version}</version>
                     <executions>
-                        <execution>
-                            <id>reserve-network-ports</id>
-                            <goals>
-                                <goal>reserve-network-port</goal>
-                            </goals>
-                            <configuration>
-                                <portNames>
-                                    <portName>tomcat.http.port</portName>
-                                    <portName>seed.shell.port</portName>
-                                    <portName>seed.ws.port</portName>
-                                </portNames>
-                            </configuration>
-                        </execution>
                         <execution>
                             <id>add-it-sources</id>
                             <goals>
@@ -110,9 +92,6 @@
                         <argLine>-Djdk.attach.allowAttachSelf -Xmx1024m -XX:MaxPermSize=256m ${argLine}</argLine>
                         <systemProperties>
                             <java.awt.headless>true</java.awt.headless>
-                            <tomcat.http.port>${tomcat.http.port}</tomcat.http.port>
-                            <seed.shell.port>${seed.shell.port}</seed.shell.port>
-                            <seed.ws.port>${seed.ws.port}</seed.ws.port>
                         </systemProperties>
                     </configuration>
                     <executions>
