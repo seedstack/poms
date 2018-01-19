@@ -50,7 +50,7 @@
         <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
         <coveralls-maven-plugin.version>3.1.0</coveralls-maven-plugin.version>
         <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
-        <japicmp-maven-plugin.version>0.8.1</japicmp-maven-plugin.version>
+        <japicmp-maven-plugin.version>0.6.2</japicmp-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
         <spotbugs-maven-plugin.version>3.1.0</spotbugs-maven-plugin.version>
