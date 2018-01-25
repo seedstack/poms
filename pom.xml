@@ -83,7 +83,8 @@
 
         <!-- Build dependencies -->
         <spotbugs.version>3.1.1</spotbugs.version>
-        <findbugs.version>3.0.1</findbugs.version>
+        <findbugs-jsr.version>3.0.2</findbugs-jsr.version>
+        <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
     </properties>
 
