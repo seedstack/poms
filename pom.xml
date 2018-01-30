@@ -63,7 +63,7 @@
         <javax.servlet.version>3.1.0</javax.servlet.version>
         <javax.ws.rs.version>2.1</javax.ws.rs.version>
         <javax.websocket-api.version>1.1</javax.websocket-api.version>
-        <jaxb-jxc-jdk9.version>2.3.0</jaxb-jxc-jdk9.version>
+        <javax.jaxb.version>2.3.0</javax.jaxb.version>
         <javax.activation.version>1.2.0</javax.activation.version>
 
         <!-- Common dependencies -->
