@@ -1,10 +1,18 @@
+# Version 3.2.0 (2018-02-14)
+
+* [new] Java 9 build support.
+* [chg] Change from findbugs to spotbugs.
+* [chg] Update testing dependencies to latest versions.
+* [chg] Update JAX-RS to 2.1.
+* [brk] Remove arquillian composite POM.
+
 # Version 3.1.1 (2017-11-28)
 
-* [new] Add non-failing checkstyle to quality check
+* [new] Add non-failing checkstyle to quality check.
 
 # Version 3.1.0 (2017-07-31)
 
-* [chg] Add profile for quality check with findbugs
+* [chg] Add profile for quality check with findbugs.
 * [chg] Update JTA to 1.2
 * [chg] Update SLF4J to 1.7.25
 * [chg] Update Jackson to 2.8.9
