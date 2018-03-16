@@ -1,3 +1,7 @@
+# Version 3.2.1 (2018-03-16)
+
+* [chg] Update Jackson to 2.9.4.
+
 # Version 3.2.0 (2018-02-14)
 
 * [new] Java 9 build support.
