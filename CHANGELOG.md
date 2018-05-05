@@ -1,3 +1,7 @@
+# Version 3.3.0 (2018-05-06)
+
+* [chg] Update Servlet API to 4.0.1.
+
 # Version 3.2.1 (2018-03-16)
 
 * [chg] Update Jackson to 2.9.4.
