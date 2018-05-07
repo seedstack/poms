@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>3.3.0-SNAPSHOT</version>
+    <version>3.3.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -118,6 +118,8 @@
                             <exclude>AUTHORS</exclude>
                             <exclude>CONTRIBUTORS</exclude>
                             <exclude>LICENSE</exclude>
+                            <exclude>**/node_modules/**</exclude>
+                            <exclude>**/bower_components/**</exclude>
                             <exclude>**/mime.types</exclude>
                             <exclude>**/*.csv</exclude>
                             <exclude>**/*.puml</exclude>
