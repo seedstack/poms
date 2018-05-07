@@ -1,3 +1,7 @@
+# Version 3.3.1 (2018-05-07)
+
+* [chg] Avoid adding license header in `node_modules` and `bower_components` directories.
+
 # Version 3.3.0 (2018-05-06)
 
 * [chg] Update Servlet API to 4.0.1.
