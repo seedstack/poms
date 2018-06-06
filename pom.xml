@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>3.3.1-SNAPSHOT</version>
+    <version>3.3.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -60,9 +60,9 @@
         <javax.annotation.version>1.2</javax.annotation.version>
         <javax.validation.version>1.1.0.Final</javax.validation.version>
         <javax.el.version>3.0.0</javax.el.version>
-        <javax.servlet.version>4.0.1</javax.servlet.version>
+        <javax.servlet.version>3.0.1</javax.servlet.version>
         <javax.ws.rs.version>2.1</javax.ws.rs.version>
-        <javax.websocket-api.version>1.1</javax.websocket-api.version>
+        <javax.websocket-api.version>1.0</javax.websocket-api.version>
         <javax.jaxb.version>2.3.0</javax.jaxb.version>
         <javax.activation.version>1.2.0</javax.activation.version>
 

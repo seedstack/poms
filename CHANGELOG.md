@@ -1,3 +1,8 @@
+# Version 3.3.2 (2018-06-06)
+
+* [fix] Downgrade Servlet API to 3.0.1 as it is the minimal version required by SeedStack. 
+* [fix] Downgrade WebSocket API to 1.0 as it is the minimal version required by SeedStack. 
+
 # Version 3.3.1 (2018-05-07)
 
 * [chg] Avoid adding license header in `node_modules` and `bower_components` directories.
