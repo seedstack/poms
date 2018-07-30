@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>3.3.2-SNAPSHOT</version>
+    <version>3.4.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -49,7 +49,7 @@
         <maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
         <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
         <coveralls-maven-plugin.version>3.1.0</coveralls-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.1</jacoco-maven-plugin.version>
         <japicmp-maven-plugin.version>0.6.2</japicmp-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
@@ -58,7 +58,7 @@
         <!-- Java specifications -->
         <jta.version>1.2</jta.version>
         <javax.annotation.version>1.2</javax.annotation.version>
-        <javax.validation.version>1.1.0.Final</javax.validation.version>
+        <javax.validation.version>2.0.1.Final</javax.validation.version>
         <javax.el.version>3.0.0</javax.el.version>
         <javax.servlet.version>3.0.1</javax.servlet.version>
         <javax.ws.rs.version>2.1</javax.ws.rs.version>
