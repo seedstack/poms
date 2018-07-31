@@ -1,3 +1,7 @@
+# Version 3.4.0 (2018-07-31)
+
+* [chg] Update Bean Validation to 2.0.1.
+
 # Version 3.3.2 (2018-06-06)
 
 * [fix] Downgrade Servlet API to 3.0.1 as it is the minimal version required by SeedStack. 
