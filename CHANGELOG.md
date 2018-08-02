@@ -1,3 +1,7 @@
+# Version 3.4.1 (2018-08-02)
+
+* [chg] Avoid adding license header in `META-INF/resources` and `src/main/webapp` directories.
+
 # Version 3.4.0 (2018-07-31)
 
 * [chg] Update Bean Validation to 2.0.1.
