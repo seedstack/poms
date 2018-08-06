@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.seedstack.poms</groupId>
         <artifactId>poms</artifactId>
-        <version>3.4.1-SNAPSHOT</version>
+        <version>3.4.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>parent-internal</artifactId>
@@ -93,6 +93,9 @@
                         <systemProperties>
                             <java.awt.headless>true</java.awt.headless>
                         </systemProperties>
+                        <classpathDependencyExcludes>
+                            <classpathDependencyExclude>org.jmockit:jmockit</classpathDependencyExclude>
+                        </classpathDependencyExcludes>
                     </configuration>
                     <executions>
                         <execution>

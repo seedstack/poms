@@ -1,3 +1,7 @@
+# Version 3.4.2 (2018-08-02)
+
+* [chg] Excludes JMockit from integration test classpath as it messes with classes by simply being present.
+ 
 # Version 3.4.1 (2018-08-02)
 
 * [chg] Avoid adding license header in `META-INF/resources` and `src/main/webapp` directories.
