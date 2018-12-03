@@ -1,3 +1,7 @@
+# Version 3.4.3 (2018-12-03)
+
+* [chg] Built and tested with OpenJDK 11 (minimum Java version still being 8).
+
 # Version 3.4.2 (2018-08-02)
 
 * [chg] Excludes JMockit from integration test classpath as it messes with classes by simply being present.
