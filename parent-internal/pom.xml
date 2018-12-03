@@ -81,7 +81,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <argLine>-Djdk.attach.allowAttachSelf -Xmx1024m -XX:MaxPermSize=256m ${argLine}</argLine>
+                        <argLine>-javaagent:${settings.localRepository}/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar -Xmx1024m -XX:MaxPermSize=256m ${argLine}</argLine>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -89,7 +89,7 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven-failsafe-plugin.version}</version>
                     <configuration>
-                        <argLine>-Djdk.attach.allowAttachSelf -Xmx1024m -XX:MaxPermSize=256m ${argLine}</argLine>
+                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${argLine}</argLine>
                         <systemProperties>
                             <java.awt.headless>true</java.awt.headless>
                         </systemProperties>
