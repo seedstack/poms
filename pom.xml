@@ -39,7 +39,6 @@
         <!-- Maven plugins -->
         <mycila.license-maven-plugin.version>3.0</mycila.license-maven-plugin.version>
         <codehaus.license-maven-plugin.version>1.8</codehaus.license-maven-plugin.version>
-        <build-helper-maven-plugin.version>1.9.1</build-helper-maven-plugin.version>
         <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
         <maven-failsafe-plugin.version>2.18.1</maven-failsafe-plugin.version>
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
@@ -53,7 +52,7 @@
         <japicmp-maven-plugin.version>0.6.2</japicmp-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
-        <spotbugs-maven-plugin.version>3.1.0</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>3.1.9</spotbugs-maven-plugin.version>
 
         <!-- Java specifications -->
         <jta.version>1.2</jta.version>
@@ -133,14 +132,6 @@
                         </excludes>
                         <skip>${license-header-check.skip}</skip>
                     </configuration>
-                    <executions>
-                        <execution>
-                            <id>check-license-header</id>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -157,66 +148,16 @@
                         </includedLicenses>
                         <skipAddThirdParty>${license-check.skip}</skipAddThirdParty>
                     </configuration>
-                    <executions>
-                        <execution>
-                            <id>check-license-compliance</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>add-third-party</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>${maven-enforcer-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>enforce-versions</id>
-                            <goals>
-                                <goal>enforce</goal>
-                            </goals>
-                            <configuration>
-                                <rules>
-                                    <requireMavenVersion>
-                                        <version>3</version>
-                                    </requireMavenVersion>
-                                    <requireJavaVersion>
-                                        <version>1.8</version>
-                                    </requireJavaVersion>
-                                    <requireUpperBoundDeps/>
-                                </rules>
-                            </configuration>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.jfrog.buildinfo</groupId>
                     <artifactId>artifactory-maven-plugin</artifactId>
                     <version>2.4.0</version>
-                    <executions>
-                        <execution>
-                            <id>build-info</id>
-                            <goals>
-                                <goal>publish</goal>
-                            </goals>
-                            <configuration>
-                                <publisher>
-                                    <contextUrl>https://oss.jfrog.org</contextUrl>
-                                    <username>{{BINTRAY_USER}}</username>
-                                    <password>{{BINTRAY_KEY}}</password>
-                                    <repoKey>oss-release-local</repoKey>
-                                    <snapshotRepoKey>oss-snapshot-local</snapshotRepoKey>
-                                </publisher>
-                                <deployProperties>
-                                    <bintray.repo>${bintray.org}/${bintray.repo}</bintray.repo>
-                                    <bintray.package>${bintray.package}</bintray.package>
-                                    <bintray.version>${project.version}</bintray.version>
-                                </deployProperties>
-                            </configuration>
-                        </execution>
-                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -224,16 +165,57 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-versions</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>11</version>
+                                </requireJavaVersion>
+                                <requireUpperBoundDeps/>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.jfrog.buildinfo</groupId>
                 <artifactId>artifactory-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>build-info</id>
+                        <goals>
+                            <goal>publish</goal>
+                        </goals>
+                        <configuration>
+                            <publisher>
+                                <contextUrl>https://oss.jfrog.org</contextUrl>
+                                <username>{{BINTRAY_USER}}</username>
+                                <password>{{BINTRAY_KEY}}</password>
+                                <repoKey>oss-release-local</repoKey>
+                                <snapshotRepoKey>oss-snapshot-local</snapshotRepoKey>
+                            </publisher>
+                            <deployProperties>
+                                <bintray.repo>${bintray.org}/${bintray.repo}</bintray.repo>
+                                <bintray.package>${bintray.package}</bintray.package>
+                                <bintray.version>${project.version}</bintray.version>
+                            </deployProperties>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
 
     <inceptionYear>2013-2018</inceptionYear>
-    <description>The lean development stack</description>
+    <description>Clean Java development</description>
     <url>http://seedstack.org</url>
     <name>${project.artifactId}</name>
 
@@ -319,6 +301,7 @@
                         <version>${buildnumber-maven-plugin.version}</version>
                         <executions>
                             <execution>
+                                <id>set-build-number</id>
                                 <phase>validate</phase>
                                 <goals>
                                     <goal>create</goal>
@@ -344,6 +327,14 @@
                                 </manifestEntries>
                             </archive>
                         </configuration>
+                        <executions>
+                            <execution>
+                                <id>build-jar</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
