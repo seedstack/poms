@@ -29,7 +29,7 @@
         <compatibility.groupId>${project.groupId}</compatibility.groupId>
         <compatibility.artifactId>${project.artifactId}</compatibility.artifactId>
         <compatibility.version>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility.version>
-        <jmockitAgent/>
+        <testArgLine/>
     </properties>
 
     <build>
@@ -82,7 +82,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${jmockitAgent}</argLine>
+                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${testArgLine}</argLine>
                     </configuration>
                 </plugin>
                 <plugin>
