@@ -75,10 +75,10 @@
         <!-- Testing dependencies -->
         <jsonassert.version>1.5.0</jsonassert.version>
         <fest-reflect.version>1.4.1</fest-reflect.version>
-        <mockito.version>2.13.0</mockito.version>
-        <powermock.version>1.7.3</powermock.version>
+        <mockito.version>2.23.4</mockito.version>
+        <powermock.version>1.7.4</powermock.version>
         <junit.version>4.12</junit.version>
-        <assertj.version>3.9.0</assertj.version>
+        <assertj.version>3.11.1</assertj.version>
         <rest-assured.version>3.0.6</rest-assured.version>
         <jmockit.version>1.44</jmockit.version>
 
