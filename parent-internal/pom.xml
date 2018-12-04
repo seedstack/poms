@@ -29,6 +29,8 @@
         <compatibility.groupId>${project.groupId}</compatibility.groupId>
         <compatibility.artifactId>${project.artifactId}</compatibility.artifactId>
         <compatibility.version>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility.version>
+        <jmockitAgent/>
+        <argLine/>
     </properties>
 
     <build>
@@ -81,7 +83,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <argLine>-javaagent:${settings.localRepository}/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar -Xmx1024m -XX:MaxPermSize=256m ${argLine}</argLine>
+                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${jmockitAgent}</argLine>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -89,7 +91,7 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven-failsafe-plugin.version}</version>
                     <configuration>
-                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${argLine}</argLine>
+                        <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                         <systemProperties>
                             <java.awt.headless>true</java.awt.headless>
                         </systemProperties>
@@ -381,6 +383,18 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>jmockit</id>
+            <activation>
+                <file>
+                    <!-- TODO: update after each jmockit version change (cannot use properties interpolation here) -->
+                    <exists>${user.home}/.m2/repository/org/jmockit/jmockit/1.44/jmockit-1.44.jar</exists>
+                </file>
+            </activation>
+            <properties>
+                <jmockitAgent>-javaagent:${settings.localRepository}/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar</jmockitAgent>
+            </properties>
         </profile>
     </profiles>
 </project>
