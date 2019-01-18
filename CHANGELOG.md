@@ -1,3 +1,7 @@
+# Version 3.4.4 (2019-01-18)
+
+* [chg] Force Javadoc to use Java 8 source level.
+
 # Version 3.4.3 (2018-12-03)
 
 * [chg] Built and tested with OpenJDK 11 (minimum Java version still being 8).
