@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>3.4.4-SNAPSHOT</version>
+    <version>3.4.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -57,7 +57,7 @@
         <!-- Java specifications -->
         <jta.version>1.2</jta.version>
         <javax.annotation.version>1.2</javax.annotation.version>
-        <javax.validation.version>2.0.1.Final</javax.validation.version>
+        <javax.validation.version>1.1.0.Final</javax.validation.version>
         <javax.el.version>3.0.0</javax.el.version>
         <javax.servlet.version>3.0.1</javax.servlet.version>
         <javax.ws.rs.version>2.1</javax.ws.rs.version>
@@ -67,8 +67,8 @@
 
         <!-- Common dependencies -->
         <slf4j.version>1.7.25</slf4j.version>
-        <jackson.version>2.9.4</jackson.version>
-        <jansi.version>1.16</jansi.version>
+        <jackson.version>2.9.8</jackson.version>
+        <jansi.version>1.17.1</jansi.version>
         <logback.version>1.2.3</logback.version>
 
         <!-- Testing dependencies -->

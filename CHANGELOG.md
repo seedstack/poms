@@ -1,3 +1,7 @@
+# Version 3.4.5 (2019-01-18)
+
+* [fix] Downgrade Validation API to 1.1 as it is the minimal version required by SeedStack. 
+
 # Version 3.4.4 (2019-01-18)
 
 * [chg] Force Javadoc to use Java 8 source level.
