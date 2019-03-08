@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>3.4.5-SNAPSHOT</version>
+    <version>3.4.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>

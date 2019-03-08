@@ -1,4 +1,8 @@
-# Version 3.4.5 (2019-01-18)
+# Version 3.4.6 (2019-03-08)
+
+* [chg] Add itArgLine property for completing integration tests command line arguments.
+
+# Version 3.4.5 (2019-03-07)
 
 * [fix] Downgrade Validation API to 1.1 as it is the minimal version required by SeedStack. 
 

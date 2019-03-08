@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.seedstack.poms</groupId>
         <artifactId>poms</artifactId>
-        <version>3.4.5-SNAPSHOT</version>
+        <version>3.4.6-SNAPSHOT</version>
     </parent>
 
     <artifactId>parent-internal</artifactId>
@@ -30,6 +30,7 @@
         <compatibility.artifactId>${project.artifactId}</compatibility.artifactId>
         <compatibility.version>MISSING_COMPATIBILITY_REFERENCE_VERSION</compatibility.version>
         <testArgLine/>
+        <itArgLine/>
         <spotbugsExclude/>
     </properties>
 
@@ -73,7 +74,7 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven-failsafe-plugin.version}</version>
                     <configuration>
-                        <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${itArgLine}</argLine>
                         <systemProperties>
                             <java.awt.headless>true</java.awt.headless>
                         </systemProperties>
