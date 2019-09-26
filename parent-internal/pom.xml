@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.seedstack.poms</groupId>
         <artifactId>poms</artifactId>
-        <version>3.4.6-SNAPSHOT</version>
+        <version>3.4.7-SNAPSHOT</version>
     </parent>
 
     <artifactId>parent-internal</artifactId>
@@ -35,15 +35,6 @@
     </properties>
 
     <build>
-        <testResources>
-            <testResource>
-                <directory>src/it/resources</directory>
-            </testResource>
-            <testResource>
-                <directory>src/test/resources</directory>
-            </testResource>
-        </testResources>
-
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -62,11 +53,16 @@
                     <version>${maven-assembly-plugin.version}</version>
                 </plugin>
                 <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
-                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${testArgLine}</argLine>
+                        <argLine>${argLine} -Xmx1024m ${testArgLine}</argLine>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -74,32 +70,7 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven-failsafe-plugin.version}</version>
                     <configuration>
-                        <argLine>-Xmx1024m -XX:MaxPermSize=256m ${itArgLine}</argLine>
-                        <systemProperties>
-                            <java.awt.headless>true</java.awt.headless>
-                        </systemProperties>
-                        <classpathDependencyExcludes>
-                            <classpathDependencyExclude>org.jmockit:jmockit</classpathDependencyExclude>
-                        </classpathDependencyExcludes>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>${jacoco-maven-plugin.version}</version>
-                    <configuration>
-                        <dataFile>${project.build.directory}/jacoco-all.exec</dataFile>
-                        <outputDirectory>${project.reporting.outputDirectory}/jacoco-all</outputDirectory>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.eluder.coveralls</groupId>
-                    <artifactId>coveralls-maven-plugin</artifactId>
-                    <version>${coveralls-maven-plugin.version}</version>
-                    <configuration>
-                        <relativeReportDirs>
-                            <relativeReportDir>jacoco-all</relativeReportDir>
-                        </relativeReportDirs>
+                        <argLine>${argLine} -Xmx1024m ${itArgLine}</argLine>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -240,44 +211,15 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unit-test</id>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>integration-test</id>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>prepare-test-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>prepare-it-agent</id>
-                        <goals>
                             <goal>prepare-agent-integration</goal>
+                            <goal>report</goal>
+                            <goal>report-integration</goal>
                         </goals>
                     </execution>
                     <execution>
@@ -298,6 +240,29 @@
                             </fileSets>
                             <destFile>${project.build.directory}/jacoco-all.exec</destFile>
                         </configuration>
+                    </execution>
+                    <execution>
+                        <id>report-all</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <phase>post-integration-test</phase>
+                        <configuration>
+                            <dataFile>${project.build.directory}/jacoco-all.exec</dataFile>
+                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-all</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
