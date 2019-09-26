@@ -169,6 +169,16 @@
                     <artifactId>maven-source-plugin</artifactId>
                     <version>${maven-source-plugin.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.eluder.coveralls</groupId>
+                    <artifactId>coveralls-maven-plugin</artifactId>
+                    <version>${coveralls-maven-plugin.version}</version>
+                    <configuration>
+                        <relativeReportDirs>
+                            <relativeReportDir>jacoco-all</relativeReportDir>
+                        </relativeReportDirs>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
 
