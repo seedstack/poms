@@ -1,3 +1,7 @@
+# Version 3.4.7 (2019-03-08)
+
+* [chg] Upgrade spotbugs to 3.1.12
+
 # Version 3.4.6 (2019-03-08)
 
 * [chg] Add itArgLine property for completing integration tests command line arguments.

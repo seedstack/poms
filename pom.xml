@@ -82,7 +82,7 @@
         <jmockit.version>1.44</jmockit.version>
 
         <!-- Build dependencies -->
-        <spotbugs.version>3.1.9</spotbugs.version>
+        <spotbugs.version>3.1.12</spotbugs.version>
         <findbugs-jsr.version>3.0.2</findbugs-jsr.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
