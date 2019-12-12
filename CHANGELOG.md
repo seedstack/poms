@@ -1,4 +1,4 @@
-# Version 3.4.7 (2019-03-08)
+# Version 3.4.7 (2019-12-12)
 
 * [chg] Upgrade spotbugs to 3.1.12
 
