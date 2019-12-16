@@ -1,4 +1,4 @@
-# Version 3.4.8 (????-??-??)
+# Version 3.4.8 (2019-12-16)
 
 * [chg] Fixes coveralls plugin reporting only Unit Test coverage. 
 
