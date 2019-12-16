@@ -1,3 +1,7 @@
+# Version 3.4.8 (????-??-??)
+
+* [chg] Fixes coveralls plugin reporting only Unit Test coverage. 
+
 # Version 3.4.7 (2019-12-12)
 
 * [chg] Upgrade spotbugs to 3.1.12
