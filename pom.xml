@@ -1,6 +1,6 @@
 <!--
 
-    Copyright © 2013-2019, The SeedStack authors <http://seedstack.org>
+    Copyright © 2013-2020, The SeedStack authors <http://seedstack.org>
 
     This Source Code Form is subject to the terms of the Mozilla Public
     License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>3.4.8-SNAPSHOT</version>
+    <version>3.4.9-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -67,7 +67,7 @@
 
         <!-- Common dependencies -->
         <slf4j.version>1.7.25</slf4j.version>
-        <jackson.version>2.9.8</jackson.version>
+        <jackson.version>2.9.9</jackson.version>
         <jansi.version>1.17.1</jansi.version>
         <logback.version>1.2.3</logback.version>
 
@@ -214,7 +214,7 @@
         </plugins>
     </build>
 
-    <inceptionYear>2013-2019</inceptionYear>
+    <inceptionYear>2013-2020</inceptionYear>
     <description>Clean Java development</description>
     <url>http://seedstack.org</url>
     <name>${project.artifactId}</name>
