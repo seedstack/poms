@@ -1,3 +1,7 @@
+# Version 3.4.9 (2020-04-30)
+
+* [chg] Update SLF4J to 1.7.30
+
 # Version 3.4.8 (2019-12-16)
 
 * [chg] Fixes coveralls plugin reporting only Unit Test coverage. 
