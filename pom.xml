@@ -66,7 +66,7 @@
         <javax.activation.version>1.2.0</javax.activation.version>
 
         <!-- Common dependencies -->
-        <slf4j.version>1.7.25</slf4j.version>
+        <slf4j.version>1.7.30</slf4j.version>
         <jackson.version>2.9.9</jackson.version>
         <jansi.version>1.17.1</jansi.version>
         <logback.version>1.2.3</logback.version>
@@ -86,6 +86,7 @@
         <findbugs-jsr.version>3.0.2</findbugs-jsr.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
+        <graalvm.version>19.3.1</graalvm.version>
     </properties>
 
     <build>
