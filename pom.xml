@@ -67,8 +67,8 @@
 
         <!-- Common dependencies -->
         <slf4j.version>1.7.30</slf4j.version>
-        <jackson.version>2.9.9</jackson.version>
-        <jansi.version>1.17.1</jansi.version>
+        <jackson.version>2.11.0</jackson.version>
+        <jansi.version>1.18</jansi.version>
         <logback.version>1.2.3</logback.version>
 
         <!-- Testing dependencies -->
