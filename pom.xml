@@ -55,6 +55,7 @@
         <spotbugs-maven-plugin.version>3.1.9</spotbugs-maven-plugin.version>
 
         <!-- Java specifications -->
+        <javax.inject.version>1</javax.inject.version>
         <jta.version>1.2</jta.version>
         <javax.annotation.version>1.2</javax.annotation.version>
         <javax.validation.version>1.1.0.Final</javax.validation.version>
