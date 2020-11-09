@@ -1,3 +1,7 @@
+# Version 3.4.10 (2020-11-09)
+
+* [chg] Update Jacoco plugin to 0.8.6.
+
 # Version 3.4.9 (2020-04-30)
 
 * [chg] Update SLF4J to 1.7.30
