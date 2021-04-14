@@ -1,3 +1,7 @@
+# Version 4.0.0 (2021-04-14)
+
+* [brk] Switch from Bintray (which reached EOL) to Sonatype for releases.
+
 # Version 3.4.10 (2020-11-09)
 
 * [chg] Update Jacoco plugin to 0.8.6.

@@ -1,6 +1,6 @@
 <!--
 
-    Copyright © 2013-2020, The SeedStack authors <http://seedstack.org>
+    Copyright © 2013-2021, The SeedStack authors <http://seedstack.org>
 
     This Source Code Form is subject to the terms of the Mozilla Public
     License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>3.4.10-SNAPSHOT</version>
+    <version>4.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -25,11 +25,6 @@
         <!-- Project properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <!-- Bintray properties -->
-        <bintray.org>seedstack</bintray.org>
-        <bintray.repo>jars</bintray.repo>
-        <bintray.package>poms</bintray.package>
 
         <!-- Checks -->
         <license-check.skip>false</license-check.skip>
@@ -157,9 +152,14 @@
                     <version>${maven-enforcer-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.jfrog.buildinfo</groupId>
-                    <artifactId>artifactory-maven-plugin</artifactId>
-                    <version>2.4.0</version>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.8</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -192,35 +192,26 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.jfrog.buildinfo</groupId>
-                <artifactId>artifactory-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>build-info</id>
-                        <goals>
-                            <goal>publish</goal>
-                        </goals>
-                        <configuration>
-                            <publisher>
-                                <contextUrl>https://oss.jfrog.org</contextUrl>
-                                <username>{{BINTRAY_USER}}</username>
-                                <password>{{BINTRAY_KEY}}</password>
-                                <repoKey>oss-release-local</repoKey>
-                                <snapshotRepoKey>oss-snapshot-local</snapshotRepoKey>
-                            </publisher>
-                            <deployProperties>
-                                <bintray.repo>${bintray.org}/${bintray.repo}</bintray.repo>
-                                <bintray.package>${bintray.package}</bintray.package>
-                                <bintray.version>${project.version}</bintray.version>
-                            </deployProperties>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                </configuration>
             </plugin>
         </plugins>
     </build>
 
-    <inceptionYear>2013-2020</inceptionYear>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <inceptionYear>2013-2021</inceptionYear>
     <description>Clean Java development</description>
     <url>http://seedstack.org</url>
     <name>${project.artifactId}</name>
@@ -241,37 +232,30 @@
     <developers>
         <developer>
             <name>Adrien LAUER</name>
-            <email>adrien.lauer@mpsa.com</email>
-            <organization>PSA Group</organization>
-            <organizationUrl>https://www.groupe-psa.com</organizationUrl>
+            <email>adrien.lauer@stellantis.com</email>
+            <organization>Stellantis</organization>
+            <organizationUrl>https://www.stellantis.com</organizationUrl>
             <timezone>Europe/Paris</timezone>
         </developer>
     </developers>
     <contributors>
         <contributor>
             <name>Marius MATEI</name>
-            <email>marius.matei@mpsa.com</email>
-            <organization>PSA Group</organization>
-            <organizationUrl>https://www.groupe-psa.com</organizationUrl>
+            <email>marius.matei@stellantis.com</email>
+            <organization>Stellantis</organization>
+            <organizationUrl>https://www.stellantis.com</organizationUrl>
             <timezone>Europe/Paris</timezone>
         </contributor>
         <contributor>
-            <name>Thierry BOUVET</name>
-            <email>thierry.bouvet@mpsa.com</email>
-            <organization>PSA Group</organization>
-            <organizationUrl>https://www.groupe-psa.com</organizationUrl>
-            <timezone>Europe/Paris</timezone>
-        </contributor>
-        <contributor>
-            <name>Redouane LOULOU</name>
-            <email>redouane.loulou@ext.mpsa.com</email>
+            <name>Sébastien MONEUSE</name>
+            <email>sebastien.moneuse@infotel.com</email>
             <organization>Infotel</organization>
             <organizationUrl>http://www.infotel.com/</organizationUrl>
             <timezone>Europe/Paris</timezone>
         </contributor>
         <contributor>
-            <name>Tuan DO CAO</name>
-            <email>tuan.docao@ext.mpsa.com</email>
+            <name>Hervé STERN</name>
+            <email>herve.stern@infotel.com</email>
             <organization>Infotel</organization>
             <organizationUrl>http://www.infotel.com/</organizationUrl>
             <timezone>Europe/Paris</timezone>
@@ -284,17 +268,6 @@
         <developerConnection>scm:git:git@github.com:seedstack/poms.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-jfrog-jfrog-jars</id>
-            <name>bintray-plugins</name>
-            <url>http://dl.bintray.com/jfrog/jfrog-jars</url>
-        </pluginRepository>
-    </pluginRepositories>
 
     <profiles>
         <profile>
@@ -348,28 +321,22 @@
         <profile>
             <id>release</id>
             <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.jfrog.buildinfo</groupId>
-                            <artifactId>artifactory-maven-plugin</artifactId>
-                            <executions>
-                                <execution>
-                                    <id>build-info</id>
-                                    <phase>none</phase>
-                                </execution>
-                            </executions>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
             </build>
-            <distributionManagement>
-                <repository>
-                    <id>bintray</id>
-                    <url>https://api.bintray.com/maven/${bintray.org}/${bintray.repo}/${bintray.package}/
-                    </url>
-                </repository>
-            </distributionManagement>
         </profile>
     </profiles>
 </project>
