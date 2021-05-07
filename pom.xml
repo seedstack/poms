@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>4.0.1-SNAPSHOT</version>
+    <version>4.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -199,6 +199,7 @@
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    <stagingProgressTimeoutMinutes>900</stagingProgressTimeoutMinutes>
                 </configuration>
             </plugin>
         </plugins>

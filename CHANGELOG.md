@@ -1,4 +1,8 @@
-# Version 4.0.0 (2021-04-14)
+# Version 4.0.2 (2021-05-07)
+
+* [chg] Increase timeout for Sonatype staging to 900.
+
+# Version 4.0.1 (2021-05-06)
 
 * [brk] Switch from Bintray (which reached EOL) to Sonatype for releases.
 
