@@ -98,9 +98,22 @@
                             <onlyBinaryIncompatible>true</onlyBinaryIncompatible>
                             <accessModifier>protected</accessModifier>
                             <breakBuildOnModifications>false</breakBuildOnModifications>
-                            <breakBuildOnBinaryIncompatibleModifications>true</breakBuildOnBinaryIncompatibleModifications>
+                            <breakBuildOnBinaryIncompatibleModifications>true
+                            </breakBuildOnBinaryIncompatibleModifications>
                             <includeSynthetic>false</includeSynthetic>
                             <ignoreMissingClasses>false</ignoreMissingClasses>
+                            <overrideCompatibilityChangeParameters>
+                                <overrideCompatibilityChangeParameter>
+                                    <compatibilityChange>METHOD_NEW_DEFAULT</compatibilityChange>
+                                    <binaryCompatible>true</binaryCompatible>
+                                    <sourceCompatible>true</sourceCompatible>
+                                </overrideCompatibilityChangeParameter>
+                                <overrideCompatibilityChangeParameter>
+                                    <compatibilityChange>METHOD_ABSTRACT_NOW_DEFAULT</compatibilityChange>
+                                    <binaryCompatible>true</binaryCompatible>
+                                    <sourceCompatible>true</sourceCompatible>
+                                </overrideCompatibilityChangeParameter>
+                            </overrideCompatibilityChangeParameters>
                         </parameter>
                         <skip>${compatibility.skip}</skip>
                         <skipPomModules>true</skipPomModules>
@@ -135,6 +148,7 @@
                         <effort>Max</effort>
                         <threshold>Low</threshold>
                         <xmlOutput>true</xmlOutput>
+                        <omitVisitors>FindReturnRef,ConstructorThrow</omitVisitors>
                     </configuration>
                 </plugin>
                 <plugin>

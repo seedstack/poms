@@ -47,7 +47,7 @@
         <japicmp-maven-plugin.version>0.18.1</japicmp-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
-        <spotbugs-maven-plugin.version>4.7.3</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.8.4.0</spotbugs-maven-plugin.version>
 
         <!-- Java specifications -->
         <javax.inject.version>1</javax.inject.version>
@@ -78,7 +78,7 @@
         <jmockit.version>1.44</jmockit.version>
 
         <!-- Build dependencies -->
-        <spotbugs.version>3.1.12</spotbugs.version>
+        <spotbugs.version>4.8.4</spotbugs.version>
         <findbugs-jsr.version>3.0.2</findbugs-jsr.version>
         <findbugs-annotations.version>3.0.1</findbugs-annotations.version>
         <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
