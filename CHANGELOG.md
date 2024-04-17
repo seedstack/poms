@@ -1,3 +1,9 @@
+# Version 4.1.0 (2024-04-17)
+
+* [chg] Update SLF4J API to 2.0.13
+* [chg] Update Jackson to 2.17.0
+* [chg] Update Logback to 1.5.5
+
 # Version 4.0.2 (2021-05-07)
 
 * [chg] Increase timeout for Sonatype staging to 900.

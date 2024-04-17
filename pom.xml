@@ -1,6 +1,6 @@
 <!--
 
-    Copyright © 2013-2021, The SeedStack authors <http://seedstack.org>
+    Copyright © 2013-2024, The SeedStack authors <http://seedstack.org>
 
     This Source Code Form is subject to the terms of the Mozilla Public
     License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -14,7 +14,7 @@
 
     <groupId>org.seedstack.poms</groupId>
     <artifactId>poms</artifactId>
-    <version>4.0.2-SNAPSHOT</version>
+    <version>4.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -43,11 +43,11 @@
         <maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
         <maven-dependency-plugin.version>2.9</maven-dependency-plugin.version>
         <coveralls-maven-plugin.version>4.3.0</coveralls-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
-        <japicmp-maven-plugin.version>0.6.2</japicmp-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+        <japicmp-maven-plugin.version>0.18.1</japicmp-maven-plugin.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
-        <spotbugs-maven-plugin.version>3.1.9</spotbugs-maven-plugin.version>
+        <spotbugs-maven-plugin.version>4.7.3</spotbugs-maven-plugin.version>
 
         <!-- Java specifications -->
         <javax.inject.version>1</javax.inject.version>
@@ -62,10 +62,10 @@
         <javax.activation.version>1.2.0</javax.activation.version>
 
         <!-- Common dependencies -->
-        <slf4j.version>1.7.30</slf4j.version>
-        <jackson.version>2.11.0</jackson.version>
+        <slf4j.version>2.0.13</slf4j.version>
+        <jackson.version>2.17.0</jackson.version>
         <jansi.version>1.18</jansi.version>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.5.5</logback.version>
 
         <!-- Testing dependencies -->
         <jsonassert.version>1.5.0</jsonassert.version>
@@ -73,7 +73,7 @@
         <mockito.version>2.23.4</mockito.version>
         <powermock.version>1.7.4</powermock.version>
         <junit.version>4.12</junit.version>
-        <assertj.version>3.12.1</assertj.version>
+        <assertj.version>3.21.0</assertj.version>
         <rest-assured.version>3.3.0</rest-assured.version>
         <jmockit.version>1.44</jmockit.version>
 
@@ -212,7 +212,7 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <inceptionYear>2013-2021</inceptionYear>
+    <inceptionYear>2013-2024</inceptionYear>
     <description>Clean Java development</description>
     <url>http://seedstack.org</url>
     <name>${project.artifactId}</name>
